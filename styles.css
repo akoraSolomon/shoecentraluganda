@@ -58,16 +58,16 @@ button:hover {
   z-index: 3;
 }
 nav {
-  min-height: 10vh;
+  min-height: 5vh;
   display: flex;
   width: 90%;
   margin: auto;
   align-items: center;
-  padding: 1rem;
+  padding: 0.5rem;
   flex-wrap: wrap;
 }
 .menu_hamburger{
-  flex: 1 1 30rem;
+  flex: 1 1 20rem;
 }
 .line{
   background-color: white;
@@ -85,10 +85,13 @@ nav ul{
   list-style: none;
   align-items: center;
 } */
+.search_icon i{
+  font-size: 24px;
+}
 #logo {
   flex: 1 1 30rem;
   font-family: "Pattaya", sans-serif;
-  font-size: large;
+  font-weight: 400;
 }
 .hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), transparent),
