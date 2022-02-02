@@ -63,19 +63,32 @@ nav {
   width: 90%;
   margin: auto;
   align-items: center;
-  padding: 2rem;
+  padding: 1rem;
   flex-wrap: wrap;
 }
-nav ul {
+.menu_hamburger{
+  flex: 1 1 30rem;
+}
+.line{
+  background-color: white;
+  width: 30px;
+  height: 2px;
+  margin: 5px 0;
+}
+nav ul{
+  display: none;
+}
+/*nav ul {
   display: flex;
   flex: 1 1 40rem;
   justify-content: space-around;
   list-style: none;
   align-items: center;
-}
+} */
 #logo {
-  flex: 2 1 40rem;
+  flex: 1 1 30rem;
   font-family: "Pattaya", sans-serif;
+  font-size: large;
 }
 .hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), transparent),
