@@ -120,7 +120,7 @@ nav ul{
   height: auto;
   max-width: 100%;
   border-radius: 1.5rem;
-  box-shadow: 1px 1px 1rem #8ea2bb;
+  box-shadow: 1px 1px 1rem #2b3746;
 }
 
 
@@ -201,19 +201,7 @@ button:focus {
   #logo {
     padding: 2rem;
   }
-  .hero{
-    min-height: 90vh;
-    width: 98%;
-    margin: auto;
-    display: grid;
-    grid-gap:1px 0.5rem;
-    grid-template-columns: auto auto auto auto auto auto  auto auto  auto auto  auto auto;
-  }
-  .hero img{
-    height: auto;
-    max-width:100%;;
-    border-radius: 0.5rem;
-  }
+  
   
   .footer-wrapper {
     text-align: center;
@@ -223,7 +211,19 @@ button:focus {
   }
 }
 /* --------- Mobile -------------- */
-@media screen and (min-width:375px) {
-
+@media screen and (max-width:400px) {
+  .hero{
+    min-height: 90vh;
+    width: 98%;
+    margin: auto;
+    display: grid;
+    grid-gap:1px 0.5rem;
+    grid-template-columns: auto auto auto auto auto auto  auto auto  auto auto  auto auto;
+  }
+  .hero img{
+    height: 40%;
+    max-width:100%;;
+    border-radius: 0.5rem;
+  }
   
 }
