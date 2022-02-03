@@ -68,6 +68,7 @@ nav {
 }
 .menu_hamburger{
   flex: 1 1 20rem;
+  cursor: pointer;
 }
 .line{
   background-color: white;
@@ -87,6 +88,7 @@ nav ul{
 } */
 .search_icon i{
   font-size: 24px;
+  cursor: pointer;
 }
 #logo {
   flex: 1 1 30rem;
@@ -96,11 +98,12 @@ nav ul{
 .hero {
   min-height: 90vh;
   display: grid;
+  grid-auto-rows: auto;
 }
 .hero img{
   height: auto;
   width: 100%;
-  border-radius: 5rem;
+  border-radius: 2rem;
 }
 
 /* LOCATIONS SECTION */
