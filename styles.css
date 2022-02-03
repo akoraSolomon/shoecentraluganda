@@ -111,7 +111,7 @@ nav ul{
 .hero {
   min-height: 90vh;
   width: 98%;
-  margin: auto;
+  margin: 1rem auto;
   display: grid;
   grid-gap:1px 0.5rem;
   grid-template-columns: auto auto auto auto  auto auto auto auto auto auto  auto auto  auto auto  auto auto;
@@ -120,102 +120,9 @@ nav ul{
   height: auto;
   max-width: 100%;
   border-radius: 1.5rem;
-  box-shadow: 1px 1px 2rem grey;
+  box-shadow: 1px 1px 1rem #8ea2bb;
 }
 
-/* LOCATIONS SECTION */
-#locations {
-  min-height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), transparent),
-    url("/img/new-york-page.png");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-}
-.locations-head {
-  width: 90%;
-  margin: auto;
-}
-.locations-head h2 {
-  padding: 1rem 0rem;
-  text-decoration: underline;
-  text-decoration-thickness: 0.5rem;
-}
-.locations-head h3 {
-  padding: 2rem 0rem;
-  background: linear-gradient(#131c27, #663b34);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.cloud {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-.moving-cloud-1 {
-  animation: cloudAnimation 3s infinite alternate ease-in-out;
-}
-.moving-cloud-2 {
-  top: 20%;
-  z-index: -1;
-  opacity: 0.5;
-  animation: cloudAnimation 3.5s infinite alternate ease-in-out;
-}
-
-@keyframes cloudAnimation {
-  from {
-    transform: translate(10%, -10%);
-  }
-  to {
-    transform: translate(0%, 0%);
-  }
-}
-/* Benefits section */
-.benefits-head {
-  background: #343c44;
-  padding: 1rem;
-  min-height: 30vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-}
-.benefits-head h3 {
-  padding: 2rem;
-  line-height: 1.8;
-}
-.cards {
-  width: 90%;
-  margin: auto;
-  display: flex;
-  min-height: 70vh;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.card {
-  min-height: 40vh;
-  box-shadow: 0px 10px 10px rgb(0, 0, 0, 0.1), 0px 20px 20px rgb(0, 0, 0, 0.1);
-  margin: 2rem 5rem;
-  flex: 1 1 25rem;
-  text-align: center;
-  line-height: 1.8;
-}
-.card h4,
-p {
-  padding: 1rem;
-}
-.card-icon {
-  background: rgb(31, 47, 71);
-}
-.card img {
-  max-width: 15%;
-  margin: 2rem;
-}
 
 /* Contact SEction */
 #contact {
@@ -294,24 +201,29 @@ button:focus {
   #logo {
     padding: 2rem;
   }
-  .cloud {
-    height: 40rem;
-    pointer-events: none;
+  .hero{
+    min-height: 90vh;
+    width: 98%;
+    margin: auto;
+    display: grid;
+    grid-gap:1px 0.5rem;
+    grid-template-columns: auto auto auto auto auto auto  auto auto  auto auto  auto auto;
   }
-  .moving-cloud-1 {
-    z-index: -1;
+  .hero img{
+    height: auto;
+    max-width:100%;;
+    border-radius: 0.5rem;
   }
-  .moving-cloud-2 {
-    z-index: -2;
-  }
-  .locations-head h3 {
-    background: rgba(19, 28, 39, 0.9);
-    -webkit-text-fill-color: white;
-  }
+  
   .footer-wrapper {
     text-align: center;
   }
   .footer-wrapper h5 {
     padding-bottom: 3rem;
   }
+}
+/* --------- Mobile -------------- */
+@media screen and (min-width:375px) {
+
+  
 }
