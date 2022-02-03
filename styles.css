@@ -67,7 +67,7 @@ nav {
   flex-wrap: wrap;
 }
 .menu_hamburger{
-  flex: 1 1 20rem;
+  flex: 1 1 10rem;
   cursor: pointer;
 }
 .line{
@@ -86,24 +86,41 @@ nav ul{
   list-style: none;
   align-items: center;
 } */
-.search_icon i{
+.search_icon{
+  flex: 1 1 10rem;
+  display: flex;
+  justify-content: right;
+}
+.search_icon i{   
   font-size: 24px;
   cursor: pointer;
 }
-#logo {
-  flex: 1 1 30rem;
+.logo {
+  flex: 1 1 20rem;  
+  }
+.logo_container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#logo1{
+  font-weight: 400;  
   font-family: "Pattaya", sans-serif;
-  font-weight: 400;
 }
 .hero {
   min-height: 90vh;
+  width: 98%;
+  margin: auto;
   display: grid;
-  grid-auto-rows: auto;
+  grid-gap:1px 0.5rem;
+  grid-template-columns: auto auto auto auto  auto auto auto auto auto auto  auto auto  auto auto  auto auto;
 }
 .hero img{
   height: auto;
-  width: 100%;
-  border-radius: 2rem;
+  max-width: 100%;
+  border-radius: 1.5rem;
+  box-shadow: 1px 1px 2rem grey;
 }
 
 /* LOCATIONS SECTION */
