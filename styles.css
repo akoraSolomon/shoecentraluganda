@@ -70,6 +70,7 @@ nav {
   flex: 1 1 10rem;
   cursor: pointer;
 }
+
 .line{
   background-color: white;
   width: 30px;
@@ -86,6 +87,9 @@ nav ul{
   list-style: none;
   align-items: center;
 } */
+.search_shoe{
+  display: none;
+}
 .search_icon{
   flex: 1 1 10rem;
   display: flex;
