@@ -8,3 +8,11 @@ document.getElementById('search_icon').onclick = function(){
     input_field.style.width = "100%";
     
 }
+
+let year = new Date();
+document.getElementById("date").innerHTML = year.getFullYear();
+
+var dropdown = document.getElementById("dropdown_id")
+document.getElementById("ham_icon").onclick = function{
+    dropdown.style.display = "inline-block"
+}
