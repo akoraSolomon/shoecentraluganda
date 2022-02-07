@@ -12,7 +12,7 @@ document.getElementById('search_icon').onclick = function(){
 let year = new Date();
 document.getElementById("date").innerHTML = year.getFullYear();
 
-var dropdown = document.getElementById("dropdown_id")
-document.getElementById("ham_icon").onclick = function{
-    dropdown.style.display = "inline-block"
+var dropdown = document.getElementById("dropdown_id");
+document.getElementById("ham_icon").onclick = function(){
+    dropdown.style.display = "inline-block";
 }
