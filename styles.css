@@ -72,6 +72,9 @@ nav {
   position: relative;
   display: inline-block;
 }
+.dropdown_content{
+  display: none;
+}
 
 .line{
   background-color: white;
@@ -97,6 +100,7 @@ nav ul{
   display: flex;
   justify-content: right;
 }
+
 .search_icon i{   
   font-size: 24px;
   cursor: pointer;
