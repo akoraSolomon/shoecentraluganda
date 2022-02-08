@@ -72,9 +72,6 @@ nav {
   position: relative;
   display: inline-block;
 }
-.dropdown_content{
-  display: none;
-}
 
 .line{
   background-color: white;
@@ -210,26 +207,32 @@ button:focus {
     border-radius: 0.5rem;
   }
   #search_shoe{
-    border-radius: 5px;
+    display: block;
+    border-radius: 7px;
     outline: none;
-    padding: 0 1rem;
+    border: 1px solid #728294;
+    padding: 2px 2rem;
     box-shadow: .5rem .5rem 2rem .5rem #d7dee9;
+    width: 100%;
+    font-size: small;
   }
   .menu_hamburger{
     position: relative;
     display: inline-block;
   }
-  .dropdown_content{
+  .dropdown_content{    
     display: none;
-    position: absolute;
-    background-color: #131c27;
-    min-width: 100px;
+    position: absolute;    
+    width: 25%;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    opacity: 0.9;
   }
   .dropdown_content a{
+    background-color: #131c27;
     display: block;
     padding: 1rem 1rem;
+    font-size: small;
   }
   
 }
