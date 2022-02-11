@@ -7,6 +7,11 @@ var ham_icon = document.getElementById("ham_icon")
 const female_shoe_category = document.getElementsByClassName("female_shoes");
 
 let year = new Date();
+img_container.onscroll = function(){
+    cancel.style.display = "none";
+    dropdown.style.transform = "translateX(-150%)";
+    this.style.opacity = "1";
+}
 cancel.onclick = function(){
     dropdown.style.transform = "translateX(-150%)";
     img_container.style.opacity = "1";
@@ -17,6 +22,7 @@ img_container.onclick = function(){
     dropdown.style.transform = "translateX(-150%)";
     search_form.style.display = "none";
     this.style.opacity = "1";
+    cancel.style.display = "none";
 }
 
 document.getElementById('search_icon').onclick = function(){

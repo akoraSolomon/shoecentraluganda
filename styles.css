@@ -104,7 +104,7 @@ nav ul{
 }
 
 .search_icon i{   
-  font-size: 24px;
+  font-size: 3rem;
   cursor: pointer;
 }
 .logo {
@@ -208,7 +208,7 @@ button:focus {
     transition: opacity 1s;
   }
   .search_icon i{   
-    font-size: 1rem;
+    font-size: 2rem;
   }
   .hero > img{
     max-height: auto;
@@ -235,6 +235,7 @@ button:focus {
     font-size: 5rem;
     display: none;
     cursor: pointer;
+    text-align: left;
   }
   .dropdown_content{    
     display: none;
@@ -251,7 +252,7 @@ button:focus {
     background-color:#eee;  
     display: block;
     padding: 3rem 3rem;
-    font-size: 3rem;
+    font-size: 2rem;
     color: #131c27;
   }
   .gender,.labels  {
