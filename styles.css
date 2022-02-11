@@ -77,7 +77,7 @@ nav {
 .line{
   background-color: white;
   width: 30px;
-  height: 5px;
+  height: 2px;
   margin: 5px 0;
   border-radius: 15px;
 }
@@ -106,6 +106,7 @@ nav ul{
 .search_icon i{   
   font-size: 3rem;
   cursor: pointer;
+  font-weight: 50;
 }
 .logo {
   flex: 1 1 20rem;  
@@ -208,7 +209,12 @@ button:focus {
     transition: opacity 1s;
   }
   .search_icon i{   
-    font-size: 2rem;
+    font-size: 3rem;
+  }
+  #shopping_bag{
+    font-size: 3rem;
+    padding-right: 1.5rem;
+    color: white;
   }
   .hero > img{
     max-height: auto;
@@ -216,26 +222,46 @@ button:focus {
     border-radius: 0.5rem;
   }
   #search_shoe {
-    display: block;
+    display: inline;
     border-radius: 17px;
     border: none;
     outline: none;
     padding: 1rem 4rem;
-    margin: 1rem 0;
-    box-shadow:  0.2em 0.1em 0.3em rgba(155, 141, 141, 0.4), -0.2em -0.1em 0.3em rgba(155, 141, 141, 0.4);
-    width: 100%;
+    margin-left: 2rem;
+    margin-right: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: #e2e7e9a8;
     font-size: small;
+    transition: all 1s;
+  }
+  #cancel_search{
+    color: #131c27;
+    font-size: 3rem;
+    font-weight: 100;
+    display: none;
+    cursor: pointer;
+   background-color: #e2e7e9a8;
+    border-radius: 50%;
+    padding:2px 8px;
+    margin: 1rem 0;
   }
   .menu_hamburger{
     position: relative;
     display: inline-block;
   }
-  #cancel{
-    color: white;
-    font-size: 5rem;
+ 
+  #cancel_dropdown{
+    color: #131c27;
+    font-size: 4rem;
+    font-weight: 100;
     display: none;
     cursor: pointer;
-    text-align: left;
+    background-color: #e2e7e9a8;
+    position: absolute;
+    left: 80%;
+    padding: 0 1.6rem;
+    border-radius: 50%;
   }
   .dropdown_content{    
     display: none;
