@@ -67,17 +67,19 @@ nav {
   flex-wrap: wrap;
 }
 .menu_hamburger{
-  flex: 1 1 10rem;
-  cursor: pointer;
+  flex: 1 1 10rem;  
   position: relative;
   display: inline-block;
 }
-
+.hamburger_containter{
+  cursor: pointer;
+}
 .line{
   background-color: white;
   width: 30px;
-  height: 2px;
+  height: 5px;
   margin: 5px 0;
+  border-radius: 15px;
 }
 nav ul{
   display: none;
@@ -89,6 +91,9 @@ nav ul{
   list-style: none;
   align-items: center;
 } */
+.gender, .labels{
+  border-top: 1px solid #323c48;
+}
 .search_shoe{
   display: none;
 }
@@ -200,20 +205,24 @@ button:focus {
     margin: 0.5rem auto;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
+    transition: opacity 1s;
+  }
+  .search_icon i{   
+    font-size: 1rem;
   }
   .hero > img{
     max-height: auto;
     max-width:100%;
     border-radius: 0.5rem;
   }
-  #search_shoe{
+  #search_shoe {
     display: block;
     border-radius: 17px;
     border: none;
     outline: none;
-    padding: 2px 2rem;
-    margin-top: 0.5rem;
-    box-shadow:  0.2em 0.1em 0.4em rgb(155, 141, 141), -0.2em -0.1em 0.4em rgb(155, 141, 141);
+    padding: 1rem 4rem;
+    margin: 1rem 0;
+    box-shadow:  0.2em 0.1em 0.3em rgba(155, 141, 141, 0.4), -0.2em -0.1em 0.3em rgba(155, 141, 141, 0.4);
     width: 100%;
     font-size: small;
   }
@@ -221,19 +230,32 @@ button:focus {
     position: relative;
     display: inline-block;
   }
+  #cancel{
+    color: white;
+    font-size: 5rem;
+    display: none;
+    cursor: pointer;
+  }
   .dropdown_content{    
     display: none;
+    background-color:rgb(247, 239, 239);
+    border-end-end-radius: 5px;
+    width: 75%;
     position: fixed;    
-    width: 25%;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow:  0.5em 0.5em 1em rgba(19, 66, 84, 0.857), 0 0 0 rgba(155, 141, 141, 0.4);
     z-index: 1;
-    opacity: 0.9;
+    transition: transform 0.5s;
+   
   }
-  .dropdown_content a{
-    background-color: #131c27;
+  .dropdown_content a{  
+    background-color:#eee;  
     display: block;
-    padding: 1rem 1rem;
-    font-size: small;
+    padding: 3rem 3rem;
+    font-size: 3rem;
+    color: #131c27;
+  }
+  .gender,.labels  {
+    border-top: 1px solid #323c4851;
   }
   
 }

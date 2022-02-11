@@ -24,10 +24,13 @@
   <body>
     <header class="main-head">
       <nav>
-        <div class="menu_hamburger" id="ham_icon">
-          <div class=" line line1"></div>
-          <div class="line line2"></div>
-          <div class="line line3"></div>         
+        <div class="menu_hamburger" >
+          <span class="hamburger_containter" id="ham_icon">
+            <div id="line1" class=" line"></div>
+            <div id="line2" class="line"></div>
+            <div id="line3" class="line"></div>
+          </span>
+          <span id="cancel">&times;</span>  
         </div>        
         <div class="logo">
           <div class="logo_container">
@@ -41,12 +44,18 @@
       </nav>
     </header>
     <div class="dropdown_content" id="dropdown_id" >
-      <a href="">Sneakers</a>
-      <a href="">Converse</a>
-      <a href="">Vans</a>
-      <a href="">Sandles</a>
-      <a href="">Boots</a>
+      <a class="shoe_categpry" href="">Sneakers</a>
+      <a class="shoe_categpry" href="">Converse</a>
+      <a class="shoe_categpry" href="">Vans</a>
+      <a class="shoe_categpry" href="">Sandles</a>
+      <a class="gender shoe_categpry" href="">Kids'</a>
+      <a class="shoe_categpry" href="">Men's</a>
+      <a class="shoe_categpry" href="">Women's</a>
+      <a class="shoe_categpry labels" href="">Air Force</a>
+      <a class="shoe_categpry" href="">Nike</a>
+      <a class="shoe_categpry" href="">Yeezy</a>
     </div>
+    
     <main>
       <div id="search_form" class="search_shoe">
         <form action="">
@@ -54,7 +63,7 @@
         </form>
         <p id="form_validation" class="form_validation_message"></p>
       </div>
-      <section class="hero">
+      <section class="hero" id="img_hero">
         <img class="female_shoes" src="./img/female/f1.jpg" alt="">
         <img class="female_shoes" src="./img/female/f2.jpg" alt="">
         <img class="female_shoes" src="./img/female/f3.jpg" alt="">
