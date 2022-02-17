@@ -83,7 +83,13 @@ nav {
 }
 nav ul{
   display: none;
-}gn-items: center;
+}
+/*nav ul {
+  display: flex;
+  flex: 1 1 40rem;
+  justify-content: space-around;
+  list-style: none;
+  align-items: center;
 } */
 .gender, .labels{
   border-top: 1px solid #323c48;
@@ -91,13 +97,13 @@ nav ul{
 .search_shoe{
   display: none;
 }
-.search_and_bad_icons{
+.search_and_bag_icons{
   flex: 1 1 10rem;
   display: flex;
   justify-content: right;
 }
 
-.search_and_bad_icons i{   
+.search_and_bag_icons i{   
   font-size: 3rem;
   cursor: pointer;
   font-weight: 50;
@@ -202,8 +208,9 @@ button:focus {
     grid-template-columns: repeat(8, 1fr);
     transition: opacity 1s;
   }
-  .search_and_bad_icons i{   
+  .search_and_bag_icons i{   
     font-size: 3rem;
+    cursor: pointer;
   }
   #shopping_bag{
     font-size: 3rem;
@@ -215,33 +222,37 @@ button:focus {
     max-width:100%;
     border-radius: 0.5rem;
   }
-  
+  .search_shoe_wrapper{
+    display: none;
+  }
   .search_shoe{
     width: 98%;
-    margin: auto;
+    margin:1rem auto;
     flex-wrap: nowrap;
     align-items: center;
-    min-height: 5vh;
     padding: 0.5rem;
+    display: flex; 
   }
   .search_shoe form{
     flex: 6 1 30rem;    
   }
   .search_shoe form input{
-    width: 50%;
+    width: 100%;
     border-radius: 17px;
     border: none;
     outline: none;
     padding: 1rem 4rem;
-    background-color: #e2e7e9a8;
+    background-color:rgba(238, 238, 238, 0.248);
+    box-shadow:  0.1em 0.1em 0.25em #131c2754, -0.1em -0.1em 0.25em  #131c2754;
     font-size: small;          
   }
   .cancel_search_bar{
-    flex: 1 1 1.5rem;
-    color: #131c27;
+    flex: 1 1 1.9rem;
+    color: #131c27ad;
     font-size: 3rem;
     cursor: pointer;
-    background-color: #e2e7e9a8;
+    background-color:rgba(238, 238, 238, 0.248);
+    box-shadow:  0.1em 0.1em 0.1em #131c2754, -0.1em -0.1em 0.1em  #131c2754;
     text-align: center;
     border-radius: 50%;
     margin-left: 1rem;
@@ -252,9 +263,8 @@ button:focus {
   }
  
   #cancel_dropdown{
-    color: #131c27;
-    font-size: 4rem;
-    font-weight: 100;
+    color: #131c27ad;
+    font-size: 3rem;
     display: none;
     cursor: pointer;
     position: absolute;
@@ -267,13 +277,11 @@ button:focus {
     border-end-end-radius: 5px;
     width: 75%;
     position: fixed;    
-    box-shadow:  0.5em 0.5em 1em rgba(19, 66, 84, 0.857), 0 0 0 rgba(155, 141, 141, 0.4);
+    box-shadow:  0.1em 0.1em 0.25em #131c27b8, 0 0 0 #131c27b8;
     z-index: 1;
-    transition: transform 0.5s;
-   
   }
   .dropdown_content a{  
-    background-color:#eee;  
+    background-color:rgba(255, 255, 255, 0.878);  
     display: block;
     padding: 3rem 3rem;
     font-size: 2rem;

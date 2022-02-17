@@ -17,9 +17,7 @@ window.onscroll = function(){
     
 }
 cancel_dropdown.onclick = function(){
-    dropdown.style.transform = "translateX(-150%)";
     img_container.style.opacity = "1";
-    this.style.display = "none";
     ham_icon.style.display = "inline";
 }
 img_container.onclick = function(){
@@ -29,25 +27,36 @@ img_container.onclick = function(){
     search_icon.style.display = "inline"; 
 }
 
-search_icon.onclick = function(){
-    search_form.style.display = "flex";
-    cancel_search.style.display = "inline";
-    input_field.style.width = "100%";
-    dropdown.style.display = "none";
-    this.style.display = "none"; 
-    ham_icon.style.display = "inline";
-    img_container.style.opacity = "1";
-}
+$(document).ready(function(){
+    $("#search_icon").click(function(){
+        $(".search_shoe_wrapper").slideDown(250);
+        $("#dropdown_id").css("display", "none");        
+        $("#img_hero").fadeTo("fast", 1);
+
+        $(this).fadeOut(500);
+    });
+    $("#cancel_search").click(function(){
+        $("#search_icon").fadeIn(500);
+        $(".search_shoe_wrapper").slideUp(250);
+    });
+    $("#ham_icon").click(function(){        
+        $("#search_form").slideUp(500);
+        $("#dropdown_id").show(250);
+        $("#dropdown_id").css("transform", "translateX(0%)");
+        $("#img_hero").fadeTo("fast", 0.6);
+    });
+    $("#cancel_dropdown").click(function(){
+        $("#dropdown_id").css("transform", "translateX(-150%)");
+    });
+
+});
+// search_icon.onclick = function(){
+//     cancel_search.style.display = "inline";
+// }
 cancel_search.onclick = function(){
-    search_form.style.display = "none";
     ham_icon.style.display = "inline";
-    search_icon.style.display = "inline";
 }
-ham_icon.onclick = function(){
-    search_form.style.display = "none";
-    dropdown.style.display = "block";
-    dropdown.style.transform = "translateX(0%)";   
-    img_container.style.opacity = "0.7";
+ham_icon.onclick = function(){  
     cancel_search.style.display = "none"; 
     search_icon.style.display = "inline"; 
     cancel_dropdown.style.display = "inline";
