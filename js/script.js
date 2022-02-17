@@ -39,10 +39,9 @@ search_icon.onclick = function(){
     img_container.style.opacity = "1";
 }
 cancel_search.onclick = function(){
-    search_icon.style.display = "inline";
+    search_form.style.display = "none";
     ham_icon.style.display = "inline";
-    search_form.style.transform = "translateY(-150%)";
-    search_form.style.height = "0vh";
+    search_icon.style.display = "inline";
 }
 ham_icon.onclick = function(){
     search_form.style.display = "none";

@@ -83,13 +83,7 @@ nav {
 }
 nav ul{
   display: none;
-}
-/*nav ul {
-  display: flex;
-  flex: 1 1 40rem;
-  justify-content: space-around;
-  list-style: none;
-  align-items: center;
+}gn-items: center;
 } */
 .gender, .labels{
   border-top: 1px solid #323c48;
@@ -97,13 +91,13 @@ nav ul{
 .search_shoe{
   display: none;
 }
-.search_icon{
+.search_and_bad_icons{
   flex: 1 1 10rem;
   display: flex;
   justify-content: right;
 }
 
-.search_icon i{   
+.search_and_bad_icons i{   
   font-size: 3rem;
   cursor: pointer;
   font-weight: 50;
@@ -208,7 +202,7 @@ button:focus {
     grid-template-columns: repeat(8, 1fr);
     transition: opacity 1s;
   }
-  .search_icon i{   
+  .search_and_bad_icons i{   
     font-size: 3rem;
   }
   #shopping_bag{
@@ -229,9 +223,6 @@ button:focus {
     align-items: center;
     min-height: 5vh;
     padding: 0.5rem;
-    display: none; 
-    transition: transform 1s; 
-    z-index: 1;
   }
   .search_shoe form{
     flex: 6 1 30rem;    
