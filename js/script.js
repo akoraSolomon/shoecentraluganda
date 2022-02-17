@@ -26,23 +26,23 @@ img_container.onclick = function(){
     dropdown.style.transform = "translateX(-150%)";
     search_form.style.display = "none";
     this.style.opacity = "1";
+    search_icon.style.display = "inline"; 
 }
 
 search_icon.onclick = function(){
-    search_form.style.width = "100%";
-    search_form.style.display = "inline";
-    dropdown.style.display = "none";
-    this.style.display = "none";
-    cancel_search.style.display = "inline"; 
-    ham_icon.style.display = "inline";
+    search_form.style.display = "flex";
     cancel_search.style.display = "inline";
+    input_field.style.width = "100%";
+    dropdown.style.display = "none";
+    this.style.display = "none"; 
+    ham_icon.style.display = "inline";
     img_container.style.opacity = "1";
-    input_field.style.width = "80%";
 }
 cancel_search.onclick = function(){
-    search_form.style.display = "none";
     search_icon.style.display = "inline";
     ham_icon.style.display = "inline";
+    search_form.style.transform = "translateY(-150%)";
+    search_form.style.height = "0vh";
 }
 ham_icon.onclick = function(){
     search_form.style.display = "none";
