@@ -6,6 +6,8 @@ var cancel_search = document.getElementById('cancel_search');
 var img_container = document.getElementById("img_hero");
 var ham_icon = document.getElementById("ham_icon");
 var cancel_dropdown = document.getElementById("cancel_dropdown");
+var shoes = document.getElementsByClassName("shoes");
+var single_shoe = document.getElementById("single_shoe");
 const female_shoe_category = document.getElementsByClassName("female_shoes");
 
 let year = new Date();
@@ -42,7 +44,10 @@ $(document).ready(function(){
         $("#dropdown_id").css("transform", "translateX(-150%)");
     });
     $(".shoes").click(function(){
-
+       $("#single_shoe_specs").addClass("display_shoe");
+    });
+    $("#go_back").click(function(){
+        $("section").filter("#img_hero").show(500);
     });
 
 });
@@ -57,8 +62,7 @@ ham_icon.onclick = function(){
     search_icon.style.display = "inline"; 
     cancel_dropdown.style.display = "inline";
 }
-var shoes = document.getElementsByClassName("shoes");
-var single_shoe = document.getElementById("single_shoe");
+//display single shoe image
 for(let i = 0; i< shoes.length; i++){
     shoes[i].onclick = function(){
         var clicked_shoe_src = this.getAttribute("src");
