@@ -247,7 +247,7 @@ button:focus {
     font-size: small;          
   }
   .cancel_search_bar{
-    flex: 1 1 1.9rem;
+    flex: 1 1 1.8rem;
     color: #131c27ad;
     font-size: 3rem;
     cursor: pointer;
@@ -273,7 +273,7 @@ button:focus {
   }
   .dropdown_content{    
     display: none;
-    background-color:rgb(247, 239, 239);
+    background-color:#0f0;
     border-end-end-radius: 5px;
     width: 75%;
     position: fixed;    
