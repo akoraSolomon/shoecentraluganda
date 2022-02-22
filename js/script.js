@@ -47,6 +47,7 @@ $(document).ready(function(){
         var clicked_shoe_src = $(this).attr("src");
         var shoe_single_shoe = $("#single_shoe").attr("src", clicked_shoe_src);
        $("#single_shoe_specs").css("display", "grid").show(500);
+       document.documentElement.scrollTop = 0;
        $("#go_back").show(500);
     });
     $("#go_back").click(function(){
