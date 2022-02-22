@@ -46,12 +46,12 @@ $(document).ready(function(){
     $(".shoes").click(function(){
         var clicked_shoe_src = $(this).attr("src");
         var shoe_single_shoe = $("#single_shoe").attr("src", clicked_shoe_src);
-       $("#single_shoe_specs").css("display", "grid");
+       $("#single_shoe_specs").css("display", "grid").show(500);
        $("#go_back").show(500);
     });
     $("#go_back").click(function(){
         $("section").filter("#img_hero").show(500);
-        $("#single_shoe_specs").hide();
+        $("#single_shoe_specs").hide(500);
     });
 
 });
