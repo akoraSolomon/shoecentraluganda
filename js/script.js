@@ -44,10 +44,14 @@ $(document).ready(function(){
         $("#dropdown_id").css("transform", "translateX(-150%)");
     });
     $(".shoes").click(function(){
-       $("#single_shoe_specs").addClass("display_shoe");
+        var clicked_shoe_src = $(this).attr("src");
+        var shoe_single_shoe = $("#single_shoe").attr("src", clicked_shoe_src);
+       $("#single_shoe_specs").css("display", "grid");
+       $("#go_back").show(500);
     });
     $("#go_back").click(function(){
         $("section").filter("#img_hero").show(500);
+        $("#single_shoe_specs").hide();
     });
 
 });
@@ -63,12 +67,12 @@ ham_icon.onclick = function(){
     cancel_dropdown.style.display = "inline";
 }
 //display single shoe image
-for(let i = 0; i< shoes.length; i++){
-    shoes[i].onclick = function(){
-        var clicked_shoe_src = this.getAttribute("src");
-        img_container.style.display = "none";
-        single_shoe.src = clicked_shoe_src;
-    }
-}
+// for(let i = 0; i< shoes.length; i++){
+//     shoes[i].onclick = function(){
+//         var clicked_shoe_src = this.getAttribute("src");
+//         img_container.style.display = "none";
+//         single_shoe.src = clicked_shoe_src;
+//     }
+// }
 
 document.getElementById("date").innerHTML = year.getFullYear();
