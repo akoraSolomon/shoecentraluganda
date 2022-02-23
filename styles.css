@@ -10,6 +10,8 @@ html {
 }
 body {
   font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 h1 {
   font-size: 2.6rem;
@@ -264,9 +266,9 @@ button:focus {
     font-size: 3rem;
     cursor: pointer;
     background-color:rgba(238, 238, 238, 0.248);
-    box-shadow:  0.1em 0.1em 0.1em #131c2754, -0.1em -0.1em 0.1em  #131c2754;
+    box-shadow:  0.1em 0.1em 0.2em #131c2754, -0.09em -0.09em 0.2em  #131c2754;
     text-align: center;
-    border-radius: 50%;
+    border-radius: 100px;
     margin-left: 1rem;
   }
   .menu_hamburger{
@@ -285,12 +287,15 @@ button:focus {
   }
   .dropdown_content{    
     display: none;
-    background-color:#0f0;
+    background-color:rgba(255, 255, 255, 0.878); 
     border-end-end-radius: 5px;
     width: 75%;
-    position: fixed;    
-    box-shadow:  0.1em 0.1em 0.25em #131c27b8, 0 0 0 #131c27b8;
+    height: 100vh;
+    position: fixed;  
+    top: 0%;
+    box-shadow:  0.25em 0.1em 0.2em #131c27b8;
     z-index: 1;
+    border-top: none;
   }
   .dropdown_content a{  
     background-color:rgba(255, 255, 255, 0.878);  

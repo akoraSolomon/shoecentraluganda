@@ -35,13 +35,15 @@ $(document).ready(function(){
         $(".search_shoe_wrapper").slideUp(250);
     });
     $("#ham_icon").click(function(){        
-        $("#search_form").slideUp(500);
-        $("#dropdown_id").show(250);
-        $("#dropdown_id").css("transform", "translateX(0%)");
-        $("#img_hero").fadeTo("fast", 0.6);
+        $("#search_form").slideUp(500);        
+        $("#img_hero").fadeTo("fast", 0.5);
+        $("#cancel_dropdown").css("display","inline");
+        $(".main-head").fadeTo("fast", 0.5).css("z-index","-1");
+        $("#dropdown_id").show(250).css("transform", "translateX(0%)");
     });
-    $("#cancel_dropdown").click(function(){
-        $("#dropdown_id").css("transform", "translateX(-150%)");
+    $("#cancel_dropdown").click(function(){        
+        $(".main-head").fadeTo("fast", 1).css("z-index","1");
+        $("#dropdown_id").hide(250).css("transform", "translateX(-150%)");
     });
     $(".shoes").click(function(){
         var clicked_shoe_src = $(this).attr("src");
@@ -65,7 +67,6 @@ cancel_search.onclick = function(){
 ham_icon.onclick = function(){  
     cancel_search.style.display = "none"; 
     search_icon.style.display = "inline"; 
-    cancel_dropdown.style.display = "inline";
 }
 //display single shoe image
 // for(let i = 0; i< shoes.length; i++){
