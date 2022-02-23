@@ -24,6 +24,7 @@ img_container.onclick = function(){
 
 $(document).ready(function(){
     $("#search_icon").click(function(){
+        document.documentElement.scrollTop = 0;
         $(".search_shoe_wrapper").slideDown(250);
         $("#dropdown_id").css("display", "none");        
         $("#img_hero").fadeTo("fast", 1);
