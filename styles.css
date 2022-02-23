@@ -248,10 +248,12 @@ button:focus {
     display: flex; 
   }
   .search_shoe form{
-    flex: 6 1 25rem;    
+    flex: 6 1 25rem;  
+      
   }
   .search_shoe form input{
-    width: 100%;
+    width: 80%;   
+    margin: 0 auto; 
     border-radius: 17px;
     border: none;
     outline: none;
@@ -315,6 +317,11 @@ button:focus {
     padding: 0;
     display: none;
   }
+  /* clears the ‘X’ from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
   
 }
 /* --------- Tablets -------------- */

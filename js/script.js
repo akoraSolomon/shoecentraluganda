@@ -27,10 +27,10 @@ $(document).ready(function(){
         document.documentElement.scrollTop = 0;
         $(".search_shoe_wrapper").slideDown(250);
         $("#search_shoe").focus(function(){
-            $(this).css("box-shadow", " 0.1em 0.1em 0.25em #131c27, -0.1em -0.1em 0.25em  #131c27");
+            $(this).css({"width":"100%","background-color": "white","transition": "all 0.5s"});
         });
         $("#search_shoe").focusout(function(){
-            $(this).css("box-shadow", " 0.1em 0.1em 0.25em #131c2754, -0.1em -0.1em 0.25em  #131c2754");
+            $(this).css({"width":"80%","background-color": "rgba(238, 238, 238, 0.248)","transition": "all 0.5s"});
         });
         $("#dropdown_id").css("display", "none");        
         $("#img_hero").fadeTo("fast", 1);
