@@ -240,7 +240,7 @@ button:focus {
     display: none;
   }
   .search_shoe{
-    width: 98%;
+    width: 90%;
     margin:1rem auto;
     flex-wrap: nowrap;
     align-items: center;
@@ -248,7 +248,7 @@ button:focus {
     display: flex; 
   }
   .search_shoe form{
-    flex: 6 1 30rem;    
+    flex: 6 1 25rem;    
   }
   .search_shoe form input{
     width: 100%;
