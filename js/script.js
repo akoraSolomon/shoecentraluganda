@@ -40,16 +40,23 @@ $(document).ready(function(){
         $("#search_icon").fadeIn(500);
         $(".search_shoe_wrapper").slideUp(250);
     });
-    $("#ham_icon").click(function(){        
+    $("#ham_icon").click(function(){    
+        document.documentElement.scrollTop = 0;    
         $("#search_form").slideUp(500);        
         $("#img_hero").fadeTo("fast", 0.5);
         $("#cancel_dropdown").css("display","inline");
         $(".main-head").fadeTo("fast", 0.5).css("z-index","-1");
-        $("#dropdown_id").show(500).css({"transform": "translateX(0%)","transform":"scale(1)"});
+        $("#logo1").css({"transform":"scale(0.25)", "transition":"transform 1s"});
+        $("#dropdown_id").show(500).css({"transform": "translateX(0%) scaleX(1)"});
+        $("#img_hero").css({"transform":"translateX(20%)", "transition":"transform 1s"});
+      
     });
-    $("#cancel_dropdown").click(function(){        
+    $("#cancel_dropdown").click(function(){     
+        document.documentElement.scrollTop = 0;   
         $(".main-head").fadeTo("fast", 1).css("z-index","1");
-        $("#dropdown_id").css({"transform": "translateY(-150%)", "transition":"transform 0.5s","transform":"scale(0.25)"}).hide(500);
+        $("#logo1").css({"transform":"scale(1)", "transition":"transform 1s"});
+        $("#img_hero").css({"transform":"translateX(0%)", "transition":"transform 1s"});
+        $("#dropdown_id").css({"transform": "translateX(-150%) scaleX(0.25)", "transition":"transform 1s"}).hide(1000);
     });
     $(".shoes").click(function(){
         var clicked_shoe_src = $(this).attr("src");

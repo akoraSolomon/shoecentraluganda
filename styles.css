@@ -135,7 +135,7 @@ nav ul{
   height: auto;
   max-width: 100%;
   border-radius: 1.5rem;
-  box-shadow: 1px 1px 2rem #abb5c0;
+  box-shadow: 1px 1px 1.5rem #abb5c07e;
 }
 
 
@@ -200,7 +200,7 @@ button:focus {
     padding-bottom: 3rem;
   }
 }
-/* ----------------------- Mobile -------------- */
+/* ------------------------------------------ Mobile -------------- */
 @media only screen and (min-width:320px) and (max-width:480px) {
   .hero{
     min-height: 90vh;
@@ -291,7 +291,7 @@ button:focus {
     display: none;
     background-color:rgba(255, 255, 255, 0.878); 
     border-end-end-radius: 5px;
-    width: 75%;
+    width: 65%;
     height: 100vh;
     position: fixed;  
     top: 0%;
