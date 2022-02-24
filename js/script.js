@@ -45,11 +45,11 @@ $(document).ready(function(){
         $("#img_hero").fadeTo("fast", 0.5);
         $("#cancel_dropdown").css("display","inline");
         $(".main-head").fadeTo("fast", 0.5).css("z-index","-1");
-        $("#dropdown_id").show(250).css("transform", "translateX(0%)");
+        $("#dropdown_id").show(500).css({"transform": "translateX(0%)","transform":"scale(1)"});
     });
     $("#cancel_dropdown").click(function(){        
         $(".main-head").fadeTo("fast", 1).css("z-index","1");
-        $("#dropdown_id").hide(250).css("transform", "translateX(-150%)");
+        $("#dropdown_id").css({"transform": "translateY(-150%)", "transition":"transform 0.5s","transform":"scale(0.25)"}).hide(500);
     });
     $(".shoes").click(function(){
         var clicked_shoe_src = $(this).attr("src");
