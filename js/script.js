@@ -40,9 +40,9 @@ $(document).ready(function(){
     });
     $("#cancel_search").click(function(){
         $("#search_icon").fadeIn(500);
-        $(".search_shoe_wrapper").slideUp(1000);
-        $(this).fadeOut(1000);
-        $("#search_shoe").css({"width":"5%","background-color": "rgba(238, 238, 238, 0.248)","transition": "all 1s"});
+        $(".search_shoe_wrapper").slideUp(500);
+        $(this).fadeOut(500);
+        $("#search_shoe").css({"width":"5%","background-color": "rgba(238, 238, 238, 0.248)","transition": "all 0.5s"});
     });
     $("#ham_icon").click(function(){    
         document.documentElement.scrollTop = 0;    
