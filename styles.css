@@ -252,7 +252,7 @@ button:focus {
       
   }
   .search_shoe form input{
-    width: 80%;   
+    width: 5%;   
     margin: 0 auto; 
     border-radius: 17px;
     border: none;
@@ -272,6 +272,9 @@ button:focus {
     text-align: center;
     border-radius: 100px;
     margin-left: 1rem;
+  }
+  #cancel_search{
+    display: none;
   }
   .menu_hamburger{
     position: relative;
