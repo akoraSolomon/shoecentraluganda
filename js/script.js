@@ -25,14 +25,17 @@ img_container.onclick = function(){
 $(document).ready(function(){
     $("#search_icon").click(function(){
         document.documentElement.scrollTop = 0; 
-        $(".search_shoe_wrapper").slideDown(250);
-        $("#cancel_search").fadeIn(1000);
+        $(".search_shoe_wrapper").slideDown(500);
+        $(".cancel_search_bar").css({"box-shadow":" 0.1em 0.1em 0.2em #131c2754, -0.09em -0.09em 0.2em  #131c2754", "transition":"box-shadow 1.5s"});
+        $("#cancel_search").fadeIn(1500);
         $("#search_shoe").css({"width":"100%","transition": "all 1s"});
         $("#search_shoe").focus(function(){
-            $(this).css({"background-color": "white","transition": "all 1s"});
+            $(".cancel_search_bar").css({"box-shadow":"none", "background-color": "#edebe4"});
+            $(this).css({"background-color": "#edebe4","box-shadow":"none","transition": "all 1s"});
         });
         $("#search_shoe").focusout(function(){
-            $(this).css({"background-color": "rgba(238, 238, 238, 0.248)","transition": "all 1s"});
+            $(".cancel_search_bar").css({"box-shadow":"0.1em 0.1em 0.2em #131c2754, -0.09em -0.09em 0.2em  #131c2754", "background-color": "rgba(238, 238, 238, 0.248)"});
+            $(this).css({"background-color": "rgba(238, 238, 238, 0.248)", "box-shadow":"0.1em 0.1em 0.25em #131c2754, -0.1em -0.1em 0.25em  #131c2754","transition": "all 1s"});
         });
         $("#dropdown_id").css("display", "none");        
         $("#img_hero").fadeTo("fast", 1);
@@ -42,6 +45,7 @@ $(document).ready(function(){
         $("#search_icon").fadeIn(500);
         $(".search_shoe_wrapper").slideUp(500);
         $(this).fadeOut(500);
+        $(".cancel_search_bar").css({"box-shadow":"none"});
         $("#search_shoe").css({"width":"5%","background-color": "rgba(238, 238, 238, 0.248)","transition": "all 0.5s"});
     });
     $("#ham_icon").click(function(){    
