@@ -23,34 +23,38 @@ img_container.onclick = function(){
 }
 
 $(document).ready(function(){
+    $(".search_shoe_wrapper").hide();
+    $("section.shoe_details").hide();
+    $("#cancel_dropdown").hide();
+    $("#dropdown_id").hide();
+    $("#go_back").hide();
     $("#search_icon").click(function(){
         document.documentElement.scrollTop = 0; 
         $(".search_shoe_wrapper").slideDown(500);
-        $(".cancel_search_bar").css({"box-shadow":" 0.1em 0.1em 0.2em #131c2754, -0.09em -0.09em 0.2em  #131c2754", "transition":"box-shadow 1.5s"});
+        $(".cancel_search_bar").css({"transform":"scale(0.5)", "transition":"transform 1.5s .5s"});
         $("#cancel_search").fadeIn(1500);
-        $("#search_shoe").css({"width":"100%","transition": "all 1s"});
+        $("#search_shoe").animate({width:"100%"},"slow");
         $("#search_shoe").focus(function(){
-            $(".cancel_search_bar").css({"box-shadow":"none", "background-color": "#edebe4"});
-            $(this).css({"background-color": "#edebe4","box-shadow":"none","transition": "all 1s"});
+            $(".cancel_search_bar").css({"box-shadow":"none", "background-color": "#FAEBD7"});
+            $(this).css({"background-color": "#FAEBD7","box-shadow":"none","transition": "all 1s"});
         });
         $("#search_shoe").focusout(function(){
             $(".cancel_search_bar").css({"box-shadow":"0.1em 0.1em 0.2em #131c2754, -0.09em -0.09em 0.2em  #131c2754", "background-color": "rgba(238, 238, 238, 0.248)"});
             $(this).css({"background-color": "rgba(238, 238, 238, 0.248)", "box-shadow":"0.1em 0.1em 0.25em #131c2754, -0.1em -0.1em 0.25em  #131c2754","transition": "all 1s"});
         });
         $("#dropdown_id").css("display", "none");        
-        $("#img_hero").fadeTo("fast", 1);
+        $("#img_hero").fadeTo("fast", 1, "swing");
         $(this).fadeOut(500);
     });
     $("#cancel_search").click(function(){
         $("#search_icon").fadeIn(500);
+        $(".cancel_search_bar").css({"transform":"scale(1)", "transition":"transform 1.5s"});
         $(".search_shoe_wrapper").slideUp(500);
-        $(this).fadeOut(500);
-        $(".cancel_search_bar").css({"box-shadow":"none"});
-        $("#search_shoe").css({"width":"5%","background-color": "rgba(238, 238, 238, 0.248)","transition": "all 0.5s"});
+        $("#search_shoe").animate({width:"5%"},"slow");
+        $(this).css({"transform":"scale(0.5)", "transition":"transform 1.5s"}).fadeOut(500);
     });
     $("#ham_icon").click(function(){    
-        document.documentElement.scrollTop = 0;    
-        $("#search_form").slideUp(500);        
+        document.documentElement.scrollTop = 0;        
         $("#img_hero").fadeTo("fast", 0.5);
         $("#cancel_dropdown").css("display","inline");
         $(".main-head").fadeTo("fast", 0.5).css("z-index","-1");
@@ -68,7 +72,16 @@ $(document).ready(function(){
     });
     $(".shoes").click(function(){
         var clicked_shoe_src = $(this).attr("src");
-        var shoe_single_shoe = $("#single_shoe").attr("src", clicked_shoe_src);
+        var id_of_clicked_shoe = $(this).attr("id");
+        const shoe = {
+            id:"f1",
+            price: "Ugx 30,000",
+            shoe_title: "Women's Evie™ Zip Wedge Bootie",
+            details: "The EVIE™ ZIP BOOTIE encompasses favorite design features from other boots into one, sleek package. Complete with classic Sorel high-traction sole for extra grip on the go. "
+        }
+        $(".shoe_title").text(shoe.shoe_title);   
+        $("#single_shoe").attr("src", clicked_shoe_src);
+        $(".price").text(shoe.price);
        $("#single_shoe_specs").css("display", "grid").show(500);
        document.documentElement.scrollTop = 0;
        $("#go_back").show(500);
@@ -84,23 +97,5 @@ $(document).ready(function(){
     });
 
 });
-// search_icon.onclick = function(){
-//     cancel_search.style.display = "inline";
-// }
-cancel_search.onclick = function(){
-    ham_icon.style.display = "inline";
-}
-ham_icon.onclick = function(){  
-    cancel_search.style.display = "none"; 
-    search_icon.style.display = "inline"; 
-}
-//display single shoe image
-// for(let i = 0; i< shoes.length; i++){
-//     shoes[i].onclick = function(){
-//         var clicked_shoe_src = this.getAttribute("src");
-//         img_container.style.display = "none";
-//         single_shoe.src = clicked_shoe_src;
-//     }
-// }
 
 document.getElementById("date").innerHTML = year.getFullYear();
