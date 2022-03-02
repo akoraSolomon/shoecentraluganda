@@ -31,7 +31,7 @@ $(document).ready(function(){
     $("#search_icon").click(function(){
         document.documentElement.scrollTop = 0; 
         $(".search_shoe_wrapper").slideDown(500);
-        $(".cancel_search_bar").css({"transform":"scale(0.5)", "transition":"transform 1.5s .5s"});
+        $(".cancel_search_bar").css({"transform":"scale(0.8)", "transition":"transform 1.5s .5s"});
         $("#cancel_search").fadeIn(1500);
         $("#search_shoe").animate({width:"100%"},"slow");
         $("#search_shoe").focus(function(){
@@ -71,17 +71,77 @@ $(document).ready(function(){
         $("#dropdown_id").css({"transform": "translateX(-150%) scaleX(0.25)", "transition":"transform 1s"}).hide(1000);
     });
     $(".shoes").click(function(){
+
         var clicked_shoe_src = $(this).attr("src");
         var id_of_clicked_shoe = $(this).attr("id");
+        $("#single_shoe").attr("src", clicked_shoe_src);
+
         const shoe = {
+            shoe_1:{
             id:"f1",
             price: "Ugx 30,000",
             shoe_title: "Women's Evie™ Zip Wedge Bootie",
             details: "The EVIE™ ZIP BOOTIE encompasses favorite design features from other boots into one, sleek package. Complete with classic Sorel high-traction sole for extra grip on the go. "
+            },
+            shoe_2:{
+                id:"f2",
+                price: "Ugx 60,000",
+                shoe_title: "Women's Platform™ laced heels",
+                details: "The EVIE™ ZIP BOOTIE encompasses favorite design features from other boots into one, sleek package. Complete with classic Sorel high-traction sole for extra grip on the go. "
+                },
+            shoe_3:{
+                id:"f3",
+                price: "Ugx 160,000",
+                shoe_title: "Women's lita™ laced high heels",
+                details: "The EVIE™ ZIP BOOTIE encompasses favorite design features from other boots into one, sleek package. Complete with classic Sorel high-traction sole for extra grip on the go. "
+                },
+            shoe_4:{
+                id:"f4",
+                price: "Ugx 120,000",
+                shoe_title: "Women's Thigh High Boots",
+                details: "The EVIE™ ZIP BOOTIE encompasses favorite design features from other boots into one, sleek package. Complete with classic Sorel high-traction sole for extra grip on the go. "
+                },
+            shoe_5:{
+                id:"f5",
+                price: "Ugx 100,000",
+                shoe_title: "Women's Knee High Boots",
+                details: "The EVIE™ ZIP BOOTIE encompasses favorite design features from other boots into one, sleek package. Complete with classic Sorel high-traction sole for extra grip on the go. "
+                },
+            shoe_6:{
+                id:"f6",
+                price: "Ugx 90,000",
+                shoe_title: "Women's Wellington boots",
+                details: "The EVIE™ ZIP BOOTIE encompasses favorite design features from other boots into one, sleek package. Complete with classic Sorel high-traction sole for extra grip on the go. "
+                },
+            shoe_7:{
+                id:"f7",
+                price: "Ugx 80,000",
+                shoe_title: "Womens' Cowboy Boots",
+                details: "The EVIE™ ZIP BOOTIE encompasses favorite design features from other boots into one, sleek package. Complete with classic Sorel high-traction sole for extra grip on the go. "
+                },
+            shoe_8:{
+                id:"f8",
+                price: "Ugx 95,000",
+                shoe_title: "Womens' Ugg Boots Ferran",
+                details: "The EVIE™ ZIP BOOTIE encompasses favorite design features from other boots into one, sleek package. Complete with classic Sorel high-traction sole for extra grip on the go. "
+                }
+        }        
+        
+        for(let key_outter in shoe){
+            let inner_shoe =shoe[key_outter];
+            if(inner_shoe.id == id_of_clicked_shoe){
+                $("#buy").removeClass("add_to_bag_inactive").addClass("add_to_bag");               
+                $(".shoe_title").text(inner_shoe.shoe_title);
+                $(".price").text(inner_shoe.price);
+                break;
+            }
+            else{
+                $(".shoe_title").text("This Shoe title isn't set as yet");
+                $(".price").text("price: n/a");
+                $("#buy").removeClass("add_to_bag").addClass("add_to_bag_inactive");
+            }
         }
-        $(".shoe_title").text(shoe.shoe_title);   
-        $("#single_shoe").attr("src", clicked_shoe_src);
-        $(".price").text(shoe.price);
+                      
        $("#single_shoe_specs").css("display", "grid").show(500);
        document.documentElement.scrollTop = 0;
        $("#go_back").show(500);
@@ -89,6 +149,7 @@ $(document).ready(function(){
     $("#go_back").click(function(){
         $("section").filter("#img_hero").show(500);
         $("#single_shoe_specs").hide(500);
+        $("#buy").css({"box-shadow":"none", "transition":"box-shadow 1s"});
     });
     $(".shoe_categpry").click(function(){
         $(this).css({"background-color":"#43516191",
