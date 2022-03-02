@@ -130,7 +130,8 @@ $(document).ready(function(){
         for(let key_outter in shoe){
             let inner_shoe =shoe[key_outter];
             if(inner_shoe.id == id_of_clicked_shoe){
-                $("#buy").removeClass("add_to_bag_inactive").addClass("add_to_bag");               
+                $("#buy").removeClass("add_to_bag_inactive").addClass("add_to_bag");  
+                $("#buy").css({"box-shadow":"0.1em 0.1em 0.25em #131c2754, 0em 0em 0.25em  #131c2754", "transition":"box-shadow 1s"});             
                 $(".shoe_title").text(inner_shoe.shoe_title);
                 $(".price").text(inner_shoe.price);
                 break;
