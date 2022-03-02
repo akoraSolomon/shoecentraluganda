@@ -146,6 +146,7 @@ $(document).ready(function(){
        $("#single_shoe_specs").css("display", "grid").show(500);
        document.documentElement.scrollTop = 0;
        $("#go_back").show(500);
+       $("main").addClass("image_slider_container");
        $("section#img_hero").removeClass("hero").addClass("image_slider");
     });
     $("#go_back").click(function(){

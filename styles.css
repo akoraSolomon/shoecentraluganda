@@ -210,11 +210,14 @@ button:focus {
     width: max-content;
     margin: 1rem 0;
     max-height: 10vh;
-    overflow-x: hidden;
   }
   .image_slider > img{
     max-height: 10vh;
     max-width: 50%;
+  }
+  .image_slider_container{
+    overflow-x: hidden;
+    width: 100%;
   }
   .shoe_details {
     width: 100%;
