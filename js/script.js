@@ -47,7 +47,7 @@ $(document).ready(function(){
         $(this).fadeOut(500);
     });
     $("#cancel_search").click(function(){
-        $("#search_icon").fadeIn(500);
+        $("i#search_icon").fadeIn(500);
         $(".cancel_search_bar").css({"transform":"scale(1)", "transition":"transform 1.5s"});
         $(".search_shoe_wrapper").slideUp(500);
         $("#search_shoe").animate({width:"5%"},"slow");
@@ -58,7 +58,7 @@ $(document).ready(function(){
         $("#img_hero").fadeTo("fast", 0.5);
         $("#cancel_dropdown").css("display","inline");
         $(".main-head").fadeTo("fast", 0.5).css("z-index","-1");
-        $("#logo1").css({"transform":"scale(0.25)", "transition":"transform 1s"});
+        $(".logo_container").children("h1").css({"transform":"scale(0.25)", "transition":"transform 1s"});
         $("#dropdown_id").show(500).css({"transform": "translateX(0%) scaleX(1)"});
         $("#img_hero").css({"transform":"translateX(20%)", "transition":"transform 1s"});
       
@@ -146,11 +146,13 @@ $(document).ready(function(){
        $("#single_shoe_specs").css("display", "grid").show(500);
        document.documentElement.scrollTop = 0;
        $("#go_back").show(500);
+       $("section#img_hero").removeClass("hero").addClass("image_slider");
     });
     $("#go_back").click(function(){
         $("section").filter("#img_hero").show(500);
         $("#single_shoe_specs").hide(500);
         $("#buy").css({"box-shadow":"none", "transition":"box-shadow 1s"});
+        $("section#img_hero").removeClass("image_slider").addClass("hero");
     });
     $(".shoe_categpry").click(function(){
         $(this).css({"background-color":"#43516191",
