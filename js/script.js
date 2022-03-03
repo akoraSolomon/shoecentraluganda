@@ -150,7 +150,7 @@ $(document).ready(function(){
        $("section#img_hero").removeClass("hero").addClass("image_slider");
        $("section.image_slider").on("touchmove", function(){
            if($(this).css("margin-left") == "0px"){
-               $(this).animate({marginLeft : "-210px"}, "slow");
+               $(this).animate({marginLeft : "-=210px"}, "slow");
            }else{
             $(this).text("margin-left is not 0px");
            }
