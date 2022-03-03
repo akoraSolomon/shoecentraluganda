@@ -149,7 +149,12 @@ $(document).ready(function(){
        $("main").addClass("image_slider_container");
        $("section#img_hero").removeClass("hero").addClass("image_slider");
        $("section.image_slider").on("touchmove", function(){
-           $(this).text("touchmove worked");
+           if($(this).css("margin-left") == "0px"){
+            $(this).text("margin-left is 0px");
+           }else{
+            $(this).text("margin-left is not 0px");
+           }
+           
        });
     });
     $("#go_back").click(function(){
