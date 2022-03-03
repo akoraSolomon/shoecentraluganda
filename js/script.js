@@ -152,7 +152,6 @@ $(document).ready(function(){
            if($(this).css("margin-left") == "0px"){
                $(this).animate({marginLeft : "-=210px"}, "slow");
            }else{
-            $(this).text("margin-left is not 0px");
            }
            
        });
