@@ -148,6 +148,9 @@ $(document).ready(function(){
        $("#go_back").show(500);
        $("main").addClass("image_slider_container");
        $("section#img_hero").removeClass("hero").addClass("image_slider");
+       $("section.image_slider").on("touchmove", function(){
+           $(this).text("touchmove worked");
+       });
     });
     $("#go_back").click(function(){
         $("section").filter("#img_hero").show(500);
