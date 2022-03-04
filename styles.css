@@ -21,7 +21,7 @@ button,
 label,
 input,
 p {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 h2 {
   font-size: 3.4rem;
@@ -53,8 +53,9 @@ button:hover {
 /* Nav section with HERO*/
 
 .main-head {
-  background: #131c27;
-  color: white;
+  background: white;
+  color: #131c27;
+  box-shadow:  0.1em 0.1em 0.25em #131c2754, 0em 0em 0.25em  #131c2754;
   position: sticky;
   top: 0%;
   z-index: 3;
@@ -69,33 +70,26 @@ nav {
   flex-wrap: wrap;
 }
 .menu_hamburger{
-  flex: 1 1 10rem;  
+  flex: 1 1 1rem;  
   position: relative;
   display: inline-block;
 }
 .hamburger_containter{
   cursor: pointer;
+  font-size:3rem;
 }
 .line{
-  background-color: white;
+  background-color: #131c27;
   width: 30px;
   height: 2px;
-  margin: 5px 0;
+  margin: 5px 5px;
   border-radius: 15px;
 }
-
-/*nav ul {
-  display: flex;
-  flex: 1 1 40rem;
-  justify-content: space-around;
-  list-style: none;
-  align-items: center;
-} */
 .gender, .labels{
   border-top: 1px solid #323c48;
 }
 .search_and_bag_icons{
-  flex: 1 1 10rem;
+  flex: 1 1 5rem;
   display: flex;
   justify-content: right;
 }
@@ -106,7 +100,7 @@ nav {
   font-weight: 50;
 }
 .logo {
-  flex: 1 1 20rem;  
+  flex: 2 1 20rem;  
   }
 .logo_container{
   display: flex;
@@ -126,21 +120,14 @@ nav {
   grid-gap:1px 0.5rem;
   grid-template-columns: auto auto auto auto  auto auto auto auto auto auto  auto auto  auto auto  auto auto;
 }
-.hero img{
-  height: auto;
-  max-width: 100%;
-  border-radius: 1.5rem;
-  box-shadow: 1px 1px 1.5rem #abb5c07e;
-}
-
-
 
 
 /* FOOTER SECTION */
 
 footer {
-  background: rgba(19, 28, 39, 0.9);
-  color: white;
+  background: white;
+  color: rgba(19, 28, 39, 0.9);
+  box-shadow:  0.1em 0.1em 0.25em #131c2754, -0.1em -0.1em 0.25em  #131c2754;
 }
 .form-wrapper label {
   margin: 0rem 3rem;
@@ -197,6 +184,9 @@ button:focus {
 }
 /* ------------------------------------------ Mobile -------------- */
 @media only screen and (min-width:320px) and (max-width:479.98px) {
+  #cancel_dropdown1{
+    display: none;
+  }
   .hero{
     min-height: 90vh;
     width: 98%;
@@ -237,7 +227,7 @@ button:focus {
   #shopping_bag{
     font-size: 3rem;
     padding-right: 1.5rem;
-    color: white;
+    color: #131c27;
   }
   .hero > img{
     max-height: auto;
@@ -245,61 +235,74 @@ button:focus {
     border-radius: 0.5rem;    
   }
   .single_shoe_container{
-    height: 13vh;
     margin: 0;
+    font-family: 'League Spartan', sans-serif;   
+    
+  }
+  .back_arrow_and_heart{
+    display: flex;
+    padding: 0;
+    margin: .5rem auto;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+  }
+  .back_arrow_and_heart span{
+    flex: 2 1 60%;
+    text-align: left;
+    padding-left: 2rem;
+  }
+  .heart{
+    flex: 1 1 40%;
+    font-size: 4rem;
+    display: flex;
+    align-items: center;
+    padding: 0;   
+  }
+  .heart h3{
+    flex: 2 1 80%;
+    text-align: right;
+    font-family: 'League Spartan', sans-serif; 
+    padding: 0;
+  }
+  .heart span{
+    text-align: left;
+    flex: 1 1 10%;
+    padding-left: 1rem;
+    font-size: 3rem;
+    padding: 0;
   }
   .shoe_head{
-    display: flex;
     padding: 0rem;
     margin: 1rem auto;
-    align-items: center;
-    justify-content: center;
-    width: 95%;
-  }
-  .shoe_head span{
-    flex: 1 1 5%;
     text-align: center;
+    width: 95%;   
   }
-  .shoe_head p{
-    flex: 3 1 80%;
-    font-size: 2.6rem;
-    font-weight: 600;
-    text-align: center;
-  }
-  .price_and_add_to_bag{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 95%;
-    margin: 0 auto;
-    padding: .5rem .5rem;
+  .shoe_title{
     font-weight: bold;
-    text-transform: uppercase;
-    overflow: hidden;
-  }
-  .price{
-    flex: 1 1 30%;
-    text-align: center;    
   }
   .add_to_bag{
-    flex: 2 1 40%;
     padding: 1rem;
     cursor: pointer;
-    border-radius: 1rem; 
+    border-radius: .5rem; 
     text-align: center;
     color:rgba(255, 255, 255, 0.878) ;
-    background-color:rgba(255, 0, 0, 0.878) ;
+    background-color:#131c27;
     letter-spacing: 2px;
+    width: 98%;
+    margin: 1rem auto;
+    font-weight: bolder;
   }
   .add_to_bag_inactive{
     flex: 2 1 40%;
     padding: 1rem;
     cursor: not-allowed;
     border-radius: 1rem; 
+    margin: 1rem auto;
     text-align: center;
     color:rgba(255, 255, 255, 0.878) ;
     background-color:rgba(255, 0, 0, 0.207) ;
-    letter-spacing: 2px;
+    width: 98%;
   } 
   .search_shoe{
     width: 90%;
@@ -372,7 +375,7 @@ button:focus {
   }
   .go_back_arrow{
     z-index: 1;
-    font-size: 3.5rem;
+    font-size: 4rem;
     cursor: pointer;    
     padding: 0;
   }

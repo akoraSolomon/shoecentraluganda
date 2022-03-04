@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,14 +11,17 @@
     />
     <meta name="robots" content="index, follow" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300&display=swap" rel="stylesheet"> 
     <link rel="icon" href="/icons/shoes.png" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css" />
     <title>Shoe Central | Uganda - A one stop shopping center for any kind of shoe</title>
   </head>
@@ -27,10 +30,9 @@
       <nav id="hide_nav">
         <div class="menu_hamburger" >
           <span class="hamburger_containter" id="ham_icon">
-            <div id="line1" class=" line"></div>
-            <div id="line2" class="line"></div>
-            <div id="line3" class="line"></div>
+            &#9776;
           </span> 
+          <span id="cancel_dropdown1">&#10005;</span>
         </div>        
         <div class="logo">
           <div class="logo_container">
@@ -44,7 +46,7 @@
       </nav>
     </header>
     <div class="dropdown_content" id="dropdown_id" >
-      <a><span id="cancel_dropdown">&times;</span></a>
+      <a><span id="cancel_dropdown">&#10005;</span></a>
       <a class="shoe_categpry" href="">Sneakers</a>
       <a class="shoe_categpry" href="">Converse</a>
       <a class="shoe_categpry" href="">Vans</a>
@@ -64,23 +66,29 @@
             <input type="search" name="search_shoe" id="search_shoe" placeholder="Search..."  maxlength="255">
           </form>
           <div class="cancel_search_bar">
-            <span id="cancel_search">&times;</span>
+            <span id="cancel_search">&#10005;</span>
           </div>
         </div>
       </div>
       <section class="shoe_details" id="single_shoe_specs">   
+        <div class="back_arrow_and_heart_wrapper">
+          <div class="back_arrow_and_heart">
+            <span class = "go_back_arrow" id="go_back">&larr;</span>
+            <div class="heart">
+              <h3>Favorite</h3>
+              <span>&#9825;</span>
+            </div>
+          </div>   
+        </div>             
+        <img src="" alt="" id="single_shoe">
         <div class="single_shoe_container">
           <div class="shoe_head">
-            <span class = "go_back_arrow" id="go_back">&larr;</span>
             <p class="shoe_title"></p>
-          </div>  
-          <div class="price_and_add_to_bag">
-            <div class="price"></div>
-            <div class="add_to_bag" id="buy">ADD TO BAG</div>
-          </div>   
-        </div>     
-           
-        <img src="" alt="" id="single_shoe">
+            <p class="shoe_subtitle"></p>
+            <p class="shoe_price"></p>
+          </div>
+          <div class="add_to_bag" id="buy">ADD TO BAG</div>   
+        </div>
       </section>
       <section class="hero" id="img_hero">
         <img id="f1" class="shoes female_shoes" src="./img/female/f1.jpg" alt="">

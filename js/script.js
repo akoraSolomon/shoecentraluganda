@@ -35,16 +35,16 @@ $(document).ready(function(){
         $("#cancel_search").fadeIn(1500);
         $("#search_shoe").animate({width:"100%"},"slow");
         $("#search_shoe").focus(function(){
-            $(".cancel_search_bar").css({"box-shadow":"none", "background-color": "#FAEBD7"});
-            $(this).css({"background-color": "#FAEBD7","box-shadow":"none","transition": "all 1s"});
+            $(".cancel_search_bar").css({"box-shadow":"none", "color":"#131c27", "border": "none","transform":"scale(1.5)","transition": "all 1s"});
+            $(this).css({"border": "1px solid #131c27","box-shadow":"0.1em 0.1em 0.25em #131c2754, -0.1em -0.1em 0.25em  #131c2754","transform":"scale(1)", "transition": "all 1s"});
         });
         $("#search_shoe").focusout(function(){
-            $(".cancel_search_bar").css({"box-shadow":"0.1em 0.1em 0.2em #131c2754, -0.09em -0.09em 0.2em  #131c2754", "background-color": "rgba(238, 238, 238, 0.248)"});
-            $(this).css({"background-color": "rgba(238, 238, 238, 0.248)", "box-shadow":"0.1em 0.1em 0.25em #131c2754, -0.1em -0.1em 0.25em  #131c2754","transition": "all 1s"});
+            $(".cancel_search_bar").css({"box-shadow":"0.1em 0.1em 0.2em #131c2754, -0.09em -0.09em 0.2em  #131c2754","transform":"scale(1)", "background-color": "rgba(238, 238, 238, 0.248)"});
+            $(this).css({"border": "none","background-color": "rgba(238, 238, 238, 0.248)", "box-shadow":"0.1em 0.1em 0.25em #131c2754, -0.1em -0.1em 0.25em  #131c2754","transition": "all 1s"});
         });
         $("#dropdown_id").css("display", "none");        
         $("#img_hero").fadeTo("fast", 1, "swing");
-        $(this).fadeOut(500);
+        $(this).css({"tranform":"scale(0.5)"});
     });
     $("#cancel_search").click(function(){
         $("i#search_icon").fadeIn(500);
@@ -54,6 +54,7 @@ $(document).ready(function(){
         $(this).css({"transform":"scale(0.5)", "transition":"transform 1.5s"}).fadeOut(500);
     });
     $("#ham_icon").click(function(){    
+        $(".menu_hamburger").css({"border":"1px solid #131c27"});
         document.documentElement.scrollTop = 0;        
         $("#img_hero").fadeTo("fast", 0.5);
         $("#cancel_dropdown").css("display","inline");
@@ -80,49 +81,57 @@ $(document).ready(function(){
             shoe_1:{
             id:"f1",
             price: "Ugx 30,000",
-            shoe_title: "Women's Evie™ Zip Wedge Bootie",
+            shoe_title: "Women's",
+            shoe_subtitle: "Evie™ Zip Wedge Bootie",
             details: "The EVIE™ ZIP BOOTIE encompasses favorite design features from other boots into one, sleek package. Complete with classic Sorel high-traction sole for extra grip on the go. "
             },
             shoe_2:{
                 id:"f2",
                 price: "Ugx 60,000",
-                shoe_title: "Women's Platform™ laced heels",
+                shoe_title: "Women's",
+                shoe_subtitle: " Platform™ laced heels encompasses",
                 details: "The EVIE™ ZIP BOOTIE encompasses favorite design features from other boots into one, sleek package. Complete with classic Sorel high-traction sole for extra grip on the go. "
                 },
             shoe_3:{
                 id:"f3",
                 price: "Ugx 160,000",
-                shoe_title: "Women's lita™ laced high heels",
+                shoe_title: "Women's",
+                shoe_subtitle: " lita™ laced high heels",
                 details: "The EVIE™ ZIP BOOTIE encompasses favorite design features from other boots into one, sleek package. Complete with classic Sorel high-traction sole for extra grip on the go. "
                 },
             shoe_4:{
                 id:"f4",
                 price: "Ugx 120,000",
-                shoe_title: "Women's Thigh High Boots",
+                shoe_title: "Women's ",
+                shoe_subtitle: "Thigh High Cowboy Boots",
                 details: "The EVIE™ ZIP BOOTIE encompasses favorite design features from other boots into one, sleek package. Complete with classic Sorel high-traction sole for extra grip on the go. "
                 },
             shoe_5:{
                 id:"f5",
                 price: "Ugx 100,000",
-                shoe_title: "Women's Knee High Boots",
+                shoe_title: "Women's",
+                shoe_subtitle: " Knee High Cowboy Boots",
                 details: "The EVIE™ ZIP BOOTIE encompasses favorite design features from other boots into one, sleek package. Complete with classic Sorel high-traction sole for extra grip on the go. "
                 },
             shoe_6:{
                 id:"f6",
                 price: "Ugx 90,000",
-                shoe_title: "Women's Wellington boots",
+                shoe_title: "Women's ",
+                shoe_subtitle: "Wellington Cowboy Boots",
                 details: "The EVIE™ ZIP BOOTIE encompasses favorite design features from other boots into one, sleek package. Complete with classic Sorel high-traction sole for extra grip on the go. "
                 },
             shoe_7:{
                 id:"f7",
                 price: "Ugx 80,000",
-                shoe_title: "Womens' Cowboy Boots",
+                shoe_title: "Womens'",
+                shoe_subtitle: " Cowboy Boots classic Sorel",
                 details: "The EVIE™ ZIP BOOTIE encompasses favorite design features from other boots into one, sleek package. Complete with classic Sorel high-traction sole for extra grip on the go. "
                 },
             shoe_8:{
                 id:"f8",
                 price: "Ugx 95,000",
-                shoe_title: "Womens' Ugg Boots Ferran",
+                shoe_title: "Womens' ",
+                shoe_subtitle: "Ugg Boots Ferrandesign",
                 details: "The EVIE™ ZIP BOOTIE encompasses favorite design features from other boots into one, sleek package. Complete with classic Sorel high-traction sole for extra grip on the go. "
                 }
         }        
@@ -132,13 +141,15 @@ $(document).ready(function(){
             if(inner_shoe.id == id_of_clicked_shoe){
                 $("#buy").removeClass("add_to_bag_inactive").addClass("add_to_bag");  
                 $("#buy").css({"box-shadow":"0.1em 0.1em 0.25em #131c2754, 0em 0em 0.25em  #131c2754", "transition":"box-shadow 1s"});             
-                $(".shoe_title").text(inner_shoe.shoe_title);
-                $(".price").text(inner_shoe.price);
+                $("p.shoe_title").text(inner_shoe.shoe_title);
+                $("p.shoe_price").text(inner_shoe.price);
+                $("p.shoe_subtitle").text(inner_shoe.shoe_subtitle);
                 break;
             }
             else{
-                $(".shoe_title").text("This Shoe title isn't set as yet");
-                $(".price").text("price: n/a");
+                $(".shoe_title").text("Shoe Type: N/A");
+                $(".shoe_price").text("price: n/a");
+                $(".shoe_subtitle").text("shoe: n/a");
                 $("#buy").removeClass("add_to_bag").addClass("add_to_bag_inactive");
             }
         }
