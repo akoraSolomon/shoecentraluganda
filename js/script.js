@@ -28,44 +28,129 @@ $(document).ready(function(){
     $("#cancel_dropdown").hide();
     $("#dropdown_id").hide();
     $("#go_back").hide();
-    $("#search_icon").click(function(){
-        document.documentElement.scrollTop = 0; 
-        $(".search_shoe_wrapper").slideDown(500);
-        $(".cancel_search_bar").css({"transform":"scale(0.8)", "transition":"transform 1.5s .5s"});
-        $("#cancel_search").fadeIn(1500);
-        $("#search_shoe").animate({width:"100%"},"slow");
-        $("#search_shoe").focus(function(){
-            $(".cancel_search_bar").css({"box-shadow":"none", "color":"#131c27", "border": "none","transform":"scale(1.5)","transition": "all 1s"});
-            $(this).css({"border": "1px solid #131c27","box-shadow":"0.1em 0.1em 0.25em #131c2754, -0.1em -0.1em 0.25em  #131c2754","transform":"scale(1)", "transition": "all 1s"});
+    function setTop(){         
+        return document.documentElement.scrollTop = 0;
+    }
+    function setHamIconBorder(){
+        return $(".menu_hamburger").css({"border":"1px solid #131c27"});
+    }
+    function slideDownSearchShoeWrapper(){
+        animateSearchBarWidth();
+        fadeInCancelSearchIcon(); 
+        return $(".search_shoe_wrapper").slideDown(500);
+    }
+    function transformCancelSearchBar(){
+        return $(".cancel_search_bar").css({"transform":"scale(0.8)", "transition":"transform 1.5s .5s"});
+    }
+    function fadeInCancelSearchIcon(){
+        return $("#cancel_search").fadeIn(1500);
+    }
+    function shoppingBagFixedPosition(){
+        return  $(".search_and_bag_icons").css({"justify-content":"right"});
+    }
+    function repositionSearchIconAndBag(){
+        return  $(".search_and_bag_icons").css({"justify-content":"space-between"});
+    }
+    function fadeOutSearchIcon(){
+        return $("#cancel_search").fadeOut(1500);
+    }
+    function fadeShoeImagesContainer(){
+        return $("#img_hero").fadeTo("fast", 0.5);
+    }
+    function animateSearchBarWidth(){  
+        searchBarFocusIn();      
+        searchBarFocusOut();
+        return $("#search_shoe").animate({width:"100%"},"slow");
+    }
+    function searchBarFocusIn(){
+        let focus_in = $("#search_shoe").focus(function(){
+            $(".cancel_search_bar").css({"box-shadow":"none", "color":"#131c27", "border": "none","transform":"scale(1.2)","transition": "all 1s"});
+            $(this).css({"border": "1px solid #131c27"});
         });
-        $("#search_shoe").focusout(function(){
-            $(".cancel_search_bar").css({"box-shadow":"0.1em 0.1em 0.2em #131c2754, -0.09em -0.09em 0.2em  #131c2754","transform":"scale(1)", "background-color": "rgba(238, 238, 238, 0.248)"});
+        return focus_in;
+    }
+    function searchBarFocusOut(){
+        let focus_out = $("#search_shoe").focusout(function(){
+            $(".cancel_search_bar").css({"color": "#131c27ad","box-shadow":"0.1em 0.1em 0.2em #131c2754, -0.09em -0.09em 0.2em  #131c2754","transform":"scale(1)", "background-color": "rgba(238, 238, 238, 0.248)"});
             $(this).css({"border": "none","background-color": "rgba(238, 238, 238, 0.248)", "box-shadow":"0.1em 0.1em 0.25em #131c2754, -0.1em -0.1em 0.25em  #131c2754","transition": "all 1s"});
         });
-        $("#dropdown_id").css("display", "none");        
-        $("#img_hero").fadeTo("fast", 1, "swing");
-        $(this).css({"tranform":"scale(0.5)"});
+        return focus_out;
+    }
+    function translateImhHeroToTwenty(){
+        $("#img_hero").css({"transform":"translateX(20%)", "transition":"transform 1s"});
+    }
+
+    function scaleLogoContainer(){
+        $(".logo_container").children("h1").css({"transform":"scale(0.25)", "transition":"transform 1s"});
+    }
+    function showDropdownMenu(){
+        $("#dropdown_id").show(500).css({"transform": "translateX(0%) scaleX(1)"});
+    }
+    function hideDropdownMenu(){
+        $("#dropdown_id").css({"transform": "translateX(-150%) scaleX(0.25)", "transition":"transform 1s"}).hide(1000);
+    }
+    function fadeImgHeroToHalf(){
+        $("#img_hero").fadeTo("fast", 0.5);
+    }
+
+    function displayCancelDropdown(){
+        $("#cancel_dropdown").css("display","inline");
+    }
+    function fadeMainToHeadHalf(){
+        $(".main-head").fadeTo("fast", 0.5).css("z-index","-1");
+    }
+    function hideDropDownMenu(){
+        return $("#dropdown_id").css("display", "none");
+    }
+    function restoreImgHeroFadeToOne(){
+       return $("#img_hero").fadeTo("fast", 1);
+    }
+    function restoreImgHeroWidth(){
+        return $("#img_hero").css({"transform":"translateX(0%)", "transition":"transform 1s"});
+     }
+    function onClickOutsideDropdown(){
+        restoreImgHeroFadeToOne();
+        restoreImgHeroWidth();
+        hideDropdownMenu();
+    }
+    $("#search_icon").click(function(){
+        setTop(); 
+        slideDownSearchShoeWrapper();
+        transformCancelSearchBar(); 
+        fadeImageWrapperTo1();
+        hideDropDownMenu();
+        $(this).fadeOut(1000, function(){
+            shoppingBagFixedPosition();
+        });        
     });
     $("#cancel_search").click(function(){
+        fadeOutSearchIcon();
         $("i#search_icon").fadeIn(500);
         $(".cancel_search_bar").css({"transform":"scale(1)", "transition":"transform 1.5s"});
         $(".search_shoe_wrapper").slideUp(500);
         $("#search_shoe").animate({width:"5%"},"slow");
         $(this).css({"transform":"scale(0.5)", "transition":"transform 1.5s"}).fadeOut(500);
+        repositionSearchIconAndBag();
+        $(this).fadeIn(500);
     });
     $("#ham_icon").click(function(){    
-        $(".menu_hamburger").css({"border":"1px solid #131c27"});
-        document.documentElement.scrollTop = 0;        
-        $("#img_hero").fadeTo("fast", 0.5);
-        $("#cancel_dropdown").css("display","inline");
-        $(".main-head").fadeTo("fast", 0.5).css("z-index","-1");
-        $(".logo_container").children("h1").css({"transform":"scale(0.25)", "transition":"transform 1s"});
-        $("#dropdown_id").show(500).css({"transform": "translateX(0%) scaleX(1)"});
-        $("#img_hero").css({"transform":"translateX(20%)", "transition":"transform 1s"});
-      
+        setHamIconBorder();      
+        fadeImgHeroToHalf();
+        displayCancelDropdown();
+        fadeMainToHeadHalf();
+        scaleLogoContainer();
+        showDropdownMenu();
+        translateImhHeroToTwenty();  
+        $('section#img_hero').click(function(){
+            cancelDropdownMenu();
+        });
+        $('.search_and_bag_icons').click(function(){
+            cancelDropdownMenu();
+        });
+            
     });
-    $("#cancel_dropdown").click(function(){     
-        document.documentElement.scrollTop = 0;   
+    $("#cancel_dropdown").click(cancelDropdownMenu = function(){     
+        setTop();  
         $(".main-head").fadeTo("fast", 1).css("z-index","1");
         $("#logo1").css({"transform":"scale(1)", "transition":"transform 1s"});
         $("#img_hero").css({"transform":"translateX(0%)", "transition":"transform 1s"});
@@ -155,7 +240,7 @@ $(document).ready(function(){
         }
                       
        $("#single_shoe_specs").css("display", "grid").show(500);
-       document.documentElement.scrollTop = 0;
+       setTop(); 
        $("#go_back").show(500);
        $("main").addClass("image_slider_container");
        $("section#img_hero").removeClass("hero").addClass("image_slider");
