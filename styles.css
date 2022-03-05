@@ -61,7 +61,7 @@ button:hover {
   z-index: 3;
 }
 nav {
-  min-height: 15vh;
+  min-height: 11vh;
   display: flex;
   width: 90%;
   margin: auto;
