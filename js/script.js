@@ -79,6 +79,9 @@ $(document).ready(function(){
     function translateImhHeroToTwenty(){
         $("#img_hero").css({"transform":"translateX(20%)", "transition":"transform 1s"});
     }
+    function restoreMainHeadZIndex(){
+        $(".main-head").fadeTo("fast", 0.5).css("z-index","0");
+    }
 
     function scaleLogoContainer(){
         $(".logo_container").children("h1").css({"transform":"scale(0.25)", "transition":"transform 1s"});
@@ -96,11 +99,17 @@ $(document).ready(function(){
     function displayCancelDropdown(){
         $("#cancel_dropdown").css("display","inline");
     }
-    function fadeMainToHeadHalf(){
-        $(".main-head").fadeTo("fast", 0.5).css("z-index","-1");
+    function setZIndexMainHead(z_index_num){
+        $(".main-head").css({"z-index":z_index_num});
     }
-    function hideDropDownMenu(){
-        return $("#dropdown_id").css("display", "none");
+    function setZIndexImgHero(z_index_num){
+        $("#img_hero").css({"z-index":z_index_num});
+    }
+    function setZIndexDropdown_menu(){
+        $("#dropdown_id").css({"z-index":"1"});
+    }
+    function fadeMainHeadToHalf(){
+        $(".main-head").fadeTo("fast", 0.5);
     }
     function restoreImgHeroFadeToOne(){
        return $("#img_hero").fadeTo("fast", 1);
@@ -109,15 +118,15 @@ $(document).ready(function(){
         return $("#img_hero").css({"transform":"translateX(0%)", "transition":"transform 1s"});
      }
     function onClickOutsideDropdown(){
-        restoreImgHeroFadeToOne();
-        restoreImgHeroWidth();
-        hideDropdownMenu();
+        // restoreImgHeroFadeToOne();
+        // restoreImgHeroWidth();
+        hideDropdownMenu()
     }
     $("#search_icon").click(function(){
         setTop(); 
         slideDownSearchShoeWrapper();
         transformCancelSearchBar(); 
-        fadeImageWrapperTo1();
+        restoreImgHeroFadeToOne();
         hideDropDownMenu();
         $(this).fadeOut(1000, function(){
             shoppingBagFixedPosition();
@@ -134,24 +143,23 @@ $(document).ready(function(){
         $(this).fadeIn(500);
     });
     $("#ham_icon").click(function(){    
-        setHamIconBorder();      
+        setHamIconBorder();  
+        setZIndexMainHead(-1);
+        setZIndexDropdown_menu();
+        setZIndexImgHero(-2);   
         fadeImgHeroToHalf();
         displayCancelDropdown();
-        fadeMainToHeadHalf();
+        fadeMainHeadToHalf();
         scaleLogoContainer();
         showDropdownMenu();
-        translateImhHeroToTwenty();  
-        $('section#img_hero').click(function(){
-            cancelDropdownMenu();
-        });
-        $('.search_and_bag_icons').click(function(){
-            cancelDropdownMenu();
-        });
-            
+        translateImhHeroToTwenty();
+                   
     });
     $("#cancel_dropdown").click(cancelDropdownMenu = function(){     
         setTop();  
-        $(".main-head").fadeTo("fast", 1).css("z-index","1");
+        setZIndexImgHero(0); 
+        setZIndexMainHead(1);
+        $(".main-head").fadeTo("fast", 1).css("z-index","0");
         $("#logo1").css({"transform":"scale(1)", "transition":"transform 1s"});
         $("#img_hero").css({"transform":"translateX(0%)", "transition":"transform 1s"});
         $("#dropdown_id").css({"transform": "translateX(-150%) scaleX(0.25)", "transition":"transform 1s"}).hide(1000);
@@ -261,7 +269,7 @@ $(document).ready(function(){
     $(".shoe_categpry").click(function(){
         $(this).css({"background-color":"#43516191",
                     "transition":"background 0.5s cubic-bezier(.5,.8,.5,.8)"});
-        $(".main-head").fadeTo("fast", 0.5).css("z-index","-1");
+        restoreMainHeadZIndex();
     });
 
 });

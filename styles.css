@@ -58,10 +58,10 @@ button:hover {
   box-shadow:  0.1em 0.1em 0.25em #131c2754, 0em 0em 0.25em  #131c2754;
   position: sticky;
   top: 0%;
-  z-index: 3;
+  z-index: 1;
 }
 nav {
-  min-height: 11vh;
+  min-height: 10vh;
   display: flex;
   width: 90%;
   margin: auto;
@@ -192,6 +192,7 @@ button:focus {
     margin: 1.5rem auto;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
+    position: relative;
   }
   .image_slider{
     display: block;
@@ -365,7 +366,6 @@ button:focus {
     position: fixed;  
     top: 0%;
     box-shadow:  0.25em 0.1em 0.2em #131c27b8;
-    z-index: 1;
     border-top: none;
   }
   .dropdown_content a{  
