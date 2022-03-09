@@ -55,7 +55,7 @@ button:hover {
 .main-head {
   background: white;
   color: #131c27;
-  box-shadow:  0.1em 0.1em 0.25em #131c2754, 0em 0em 0.25em  #131c2754;
+  box-shadow:  0.1em 0.1em 0.5em #131c2733, 0em 0em 0.25em  #131c2733;
   position: sticky;
   top: 0%;
   z-index: 1;
@@ -183,31 +183,41 @@ button:focus {
 }
 /* ------------------------------------------ Mobile -------------- */
 @media only screen and (min-width:320px) and (max-width:479.98px) {
+  .bag_items_and_cancel_alert{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin: 2rem 3rem;
+  }
+  .cancel_shop_bag_alert{
+    cursor: pointer;
+    font-size: 3rem;
+    font-weight: lighter;
+    color: #131c2790;
+  }
+  .bag_items{
+    font-weight: bold;
+  }
   .shop_bag_notification_content{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
-    
+    margin-top: 12rem;
   }
-  .cancel_shop_bag_alert{
-    display: flex;
-    justify-content: flex-end;
-    padding: 2rem;
-    font-size: 3rem;
-    cursor: pointer;
-  }
+  
   .shop_bag_alert{
     color: #131c27;
     z-index: 2;
-    font-family: 'League Spartan', sans-serif; 
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    background-color: #e4e825;
+    font-family: 'League Spartan', sans-serif;
+    top: 0%;
+    right: 0%;
+    background-color:rgba(255, 255, 255, 0.878); 
+    border-end-end-radius: 5px;
     width: 80%;
-    transform: translate(-50%, -50%);
-    min-height: 20vh;
+    height: 80vh;
+    position: fixed;  
+    box-shadow:  0em 0em 0.2em #131c27b8, 0.25em 0.1em 0.2em #131c277c;
+    border-top: none;
     
   }
   .search_shoe_wrapper{

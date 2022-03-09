@@ -81,11 +81,16 @@ $(document).ready(function(){
            
     });
     $("#shopping_bag").click(function(){
-        let empty = "Shopping Bag Is Empty!";
+        let empty = "Your Bag Is Empty!";
         let cancel_alert = "&#10005;";
+        let shopped_shoe_pairs = "Bag(0)";
+
+        $("#bag_items_and_cancel_alert").addClass("bag_items_and_cancel_alert");
         $("#shopping_cart_notification").addClass("shop_bag_notification_content").text(empty);
+        $("#bag_items").text(shopped_shoe_pairs).addClass("bag_items");
         $("#shopping_alert_container").fadeIn(500).addClass("shop_bag_alert");
         $("#cancel_shop_bag_alert").html(cancel_alert).addClass("cancel_shop_bag_alert");
+        scaleLogo("scale(0.25)")
         fadeImgHeroTo(0.3);
         fadeMainHeadTo("fast", 0.3);
         fadeFooterTo("fast", 0.3);
@@ -96,6 +101,7 @@ $(document).ready(function(){
     });
     $("#cancel_shop_bag_alert").click(function(){
         $("#shopping_alert_container").fadeOut(500, function(){
+            scaleLogo("scale(1)")
             fadeImgHeroTo(1);
             fadeMainHeadTo("fast", 1);
             fadeFooterTo("fast", 1);
