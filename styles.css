@@ -183,6 +183,37 @@ button:focus {
 }
 /* ------------------------------------------ Mobile -------------- */
 @media only screen and (min-width:320px) and (max-width:479.98px) {
+  .shop_bag_notification_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+  }
+  .cancel_shop_bag_alert{
+    display: flex;
+    justify-content: flex-end;
+    padding: 2rem;
+    font-size: 2rem;
+  }
+  .shop_bag_alert{
+    color: #131c27;
+    z-index: 2;
+    
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    background-color: #e4e825;
+    width: 80%;
+    transform: translate(-50%, -50%);
+    min-height: 20vh;
+    
+  }
+  .search_shoe_wrapper{
+    position: sticky;
+    top: 0%;
+    z-index: 1;
+    display: none;
+  }
   #cancel_dropdown1{
     display: none;
   }
@@ -212,6 +243,7 @@ button:focus {
     width: 100%;
     min-height: 50vh;
     grid-template-columns: repeat(1, 1fr);
+    display: none;
   }
   .shoe_details > img{
     max-height: auto;
@@ -227,12 +259,6 @@ button:focus {
     color: #131c27;
     justify-content: space-between;
   }
-  /* .search_and_bag_icons:first-child{   
-    margin-right: 2rem ;
-  }
-  .search_and_bag_icons:nth-child(2){   
-    text-align: left;
-  } */
   .hero > img{
     max-height: auto;
     max-width:100%;
@@ -312,18 +338,19 @@ button:focus {
   } 
   .search_shoe{
     width: 90%;
-    margin:1rem auto;
+    margin: auto;
     flex-wrap: nowrap;
     align-items: center;
     padding: 0.5rem;
-    display: flex; 
+    display: flex;
+    min-height: 10vh;
   }
   .search_shoe form{
     flex: 6 1 25rem;  
       
   }
   .search_shoe form input{
-    width: 5%;   
+    width: 0%;   
     margin: 0 auto; 
     border-radius: 17px;
     border: none;
@@ -350,7 +377,7 @@ button:focus {
   }
  
   #cancel_dropdown{
-    color: #131c27ad;
+    color: #131c27;
     font-size: 3rem;
     cursor: pointer;
     position: absolute;
