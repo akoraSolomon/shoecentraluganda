@@ -9,7 +9,7 @@ $(document).ready(function(){
     function setHamIconBorder(){
         return $(".menu_hamburger").css({"border":"1px solid #131c27"});
     }
-    function setFooterFadeTo(duration, visibility){
+    function fadeFooterTo(duration, visibility){
         $("footer").fadeTo(duration, visibility);
     }
     function fadeSingleShoeTo(duration, visibility){
@@ -82,10 +82,27 @@ $(document).ready(function(){
     });
     $("#shopping_bag").click(function(){
         let empty = "Shopping Bag Is Empty!";
-        let cancel_alert = "x";
+        let cancel_alert = "&#10005;";
         $("#shopping_cart_notification").addClass("shop_bag_notification_content").text(empty);
-        $("#shopping_alert_container").addClass("shop_bag_alert");
-        $("#cancel_shop_bag_alert").text(cancel_alert).addClass("cancel_shop_bag_alert");
+        $("#shopping_alert_container").fadeIn(500).addClass("shop_bag_alert");
+        $("#cancel_shop_bag_alert").html(cancel_alert).addClass("cancel_shop_bag_alert");
+        fadeImgHeroTo(0.3);
+        fadeMainHeadTo("fast", 0.3);
+        fadeFooterTo("fast", 0.3);
+        setZIndexMainHead(-1);
+        setZIndexImgHero(-1);
+        setFooterZIndex(-1);
+        
+    });
+    $("#cancel_shop_bag_alert").click(function(){
+        $("#shopping_alert_container").fadeOut(500, function(){
+            fadeImgHeroTo(1);
+            fadeMainHeadTo("fast", 1);
+            fadeFooterTo("fast", 1);
+            setZIndexMainHead(1);
+            setZIndexImgHero(0);
+            setFooterZIndex(0);
+        });
     });
     $("#cancel_search").click(cancelSearchBar = function(){          
         $("#search_shoe").animate({width:"0%"},"slow", function(){
@@ -108,7 +125,7 @@ $(document).ready(function(){
         scaleLogo("scale(0.25)")
         setTranslateDropdown();
         translateImhHeroToTwenty();
-        setFooterFadeTo("slow", 0.3);
+        fadeFooterTo("slow", 0.3);
         setFooterZIndex(-1);
         if($("#single_shoe_specs").css("display") == "grid"){
             fadeSingleShoeTo("slow", 0.3);
@@ -118,7 +135,7 @@ $(document).ready(function(){
         setTop();  
         setZIndexImgHero(0); 
         setZIndexMainHead(1);
-        setFooterFadeTo("slow", 1);
+        fadeFooterTo("slow", 1);
         setFooterZIndex(0);
         fadeImgHeroTo(1);
         if($("#single_shoe_specs").css("display") == "grid"){
