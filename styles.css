@@ -76,14 +76,8 @@ nav {
 }
 .hamburger_containter{
   cursor: pointer;
-  font-size:3rem;
-}
-.line{
-  background-color: #131c27;
-  width: 30px;
-  height: 2px;
-  margin: 5px 5px;
-  border-radius: 15px;
+  width: 60%;
+  height: 60%;
 }
 .gender, .labels{
   border-top: 1px solid #323c48;
