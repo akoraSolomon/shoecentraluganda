@@ -100,6 +100,12 @@ nav {
   cursor: pointer;
   padding: 1rem;
 }
+.search_and_bag_icons img{   
+  width: 50%;
+  height: 50%;
+  cursor: pointer;
+  padding: 1rem;
+}
 .logo {
   flex: 2 1 20rem;  
   }
@@ -213,7 +219,7 @@ button:focus {
     font-family: 'League Spartan', sans-serif;
     top: 0%;
     right: 0%;
-    background-color:rgba(255, 255, 255, 0.878); 
+    background-color:rgb(255, 255, 255); 
     border-end-end-radius: 5px;
     width: 80%;
     height: 80vh;
@@ -357,7 +363,7 @@ button:focus {
     align-items: center;
     padding: 0.5rem;
     display: flex;
-    min-height: 10vh;
+    min-height: 15vh;
   }
   .search_shoe form{
     flex: 6 1 25rem;  
