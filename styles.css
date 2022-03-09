@@ -92,11 +92,13 @@ nav {
   flex: 1 1 5rem;
   display: flex;
   justify-content: right;
+  flex-direction: row;
 }
 
 .search_and_bag_icons i{   
   font-size: 3rem;
   cursor: pointer;
+  padding: 1rem;
 }
 .logo {
   flex: 2 1 20rem;  

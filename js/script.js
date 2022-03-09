@@ -6,8 +6,15 @@ $(document).ready(function(){
     function setTop(){         
         return document.documentElement.scrollTop = 0;
     }
-    function setHamIconBorder(){
-        return $(".menu_hamburger").css({"border":"1px solid #131c27"});
+    function setBorderOnClickedIcons(identifier){
+        if(identifier == ".menu_hamburger"){
+            $("#shopping_bag").css({"border":"none"});
+            $(identifier).css({"border":"1px solid #131c27"});
+        }
+        else{
+            $(".menu_hamburger").css({"border":"none"});
+            $(identifier).css({"border":"1px solid #131c27"});
+        }       
     }
     function fadeFooterTo(duration, visibility){
         $("footer").fadeTo(duration, visibility);
@@ -97,7 +104,7 @@ $(document).ready(function(){
         setZIndexMainHead(-1);
         setZIndexImgHero(-1);
         setFooterZIndex(-1);
-        
+        setBorderOnClickedIcons("#shopping_bag");
     });
     $("#cancel_shop_bag_alert").click(function(){
         $("#shopping_alert_container").fadeOut(500, function(){
@@ -121,7 +128,7 @@ $(document).ready(function(){
         });         
     });
     $("#ham_icon").click(function(){    
-        setHamIconBorder();  
+        setBorderOnClickedIcons(".menu_hamburger");
         setZIndexMainHead(-1);
         setZIndexDropdown_menu();
         setZIndexImgHero(-2); 
