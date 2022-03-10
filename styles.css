@@ -225,9 +225,6 @@ button:focus {
     z-index: 1;
     display: none;
   }
-  #cancel_dropdown1{
-    display: none;
-  }
   .hero{
     min-height: 90vh;
     width: 98%;

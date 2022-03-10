@@ -1,7 +1,9 @@
 $(document).ready(function(){
     $("section.shoe_details").hide();
     $("#go_back").hide();
-    let cancel_icon = "&#10005;";    
+    let cancel_icon = "&#10005;";   
+    let heart_icon = "&#x2661;";
+    let ratings = "";
     function setTop(){         
         return document.documentElement.scrollTop = 0;
     }
@@ -15,8 +17,8 @@ $(document).ready(function(){
             $(identifier).css({"border":"1px solid #131c27"});
         }       
     }
-    function fadeFooterTo(duration, visibility){
-        $("footer").fadeTo(duration, visibility);
+    function footerBlur(blur){
+        $("footer").css({"filter":blur, "transition":"filter 1s"});
     }
     function fadeSingleShoeTo(duration, visibility){
         $("#single_shoe_specs").fadeTo(duration, visibility);
@@ -43,7 +45,10 @@ $(document).ready(function(){
     function setFooterZIndex(value){
         $("footer").css({"z-index": value});
     }
-    function fadeImgHeroTo(blur){
+    function restoreImgHeroPosition(){
+        $("#img_hero").css({"transform":"translateX(0%)", "transition":"transform 1s"});
+    }
+    function imgHeroBlur(blur){
         $("#img_hero").css({"filter":blur, "transition":"filter 1s"});
     }
 
@@ -52,6 +57,9 @@ $(document).ready(function(){
     }
     function scaleHeart(scale){
         $(".heart span").css({"transform":scale, "transition":"transform 1.5s"});
+    }
+    function hideDropdownMenu(){
+        $("#dropdown_id").css({"transform": "translateX(-150%) scaleX(0.25)", "transition":"transform 1s"}).hide(1000);
     }
     
     function setZIndexMainHead(z_index_num){
@@ -66,8 +74,8 @@ $(document).ready(function(){
     function setZIndexDropdown_menu(){
         $("#dropdown_id").css({"z-index":"1"});
     }
-    function fadeMainHeadTo(duration, visibility){
-        $(".main-head").fadeTo(duration, visibility);
+    function mainHeadBlur(blur){
+        $(".main-head").css({"filter":blur, "transition":"filter 1s"});
     }
     function scaleCancelSearchIcon(scale, transition){
         $(".cancel_search_bar").css({"transform":scale, "transition":transition});
@@ -97,9 +105,9 @@ $(document).ready(function(){
         $("#shopping_alert_container").fadeIn(500).addClass("shop_bag_alert");
         $("#cancel_shop_bag_alert").html(cancel_icon).addClass("cancel_shop_bag_alert");
         scaleLogo("scale(0.25)")
-        fadeImgHeroTo("blur(1rem)");
-        fadeMainHeadTo("fast", 0.3);
-        fadeFooterTo("fast", 0.3);
+        imgHeroBlur("blur(0.5rem)");
+        mainHeadBlur("blur(0.5rem)");
+        footerBlur("blur(0.5rem)");
         setZIndexMainHead(-1);
         setZIndexImgHero(-1);
         setFooterZIndex(-1);
@@ -108,9 +116,9 @@ $(document).ready(function(){
     $("#cancel_shop_bag_alert").click(function(){
         $("#shopping_alert_container").fadeOut(500, function(){
             scaleLogo("scale(1)")
-            fadeImgHeroTo("blur(0)");
-            fadeMainHeadTo("fast", 1);
-            fadeFooterTo("fast", 1);
+            imgHeroBlur("blur(0)");
+            mainHeadBlur("blur(0)");
+            footerBlur("blur(0)");
             setZIndexMainHead(1);
             setZIndexImgHero(0);
             setFooterZIndex(0);
@@ -131,13 +139,13 @@ $(document).ready(function(){
         setZIndexMainHead(-1);
         setZIndexDropdown_menu();
         setZIndexImgHero(-2); 
-        fadeImgHeroTo("blur(0.5rem)");
+        imgHeroBlur("blur(0.5rem)");
         displayCancelIcon("#cancel_dropdown",cancel_icon);
-        fadeMainHeadTo("slow", 0.3);
+        mainHeadBlur("blur(0.5rem)");
         scaleLogo("scale(0.25)")
         setTranslateDropdown();
         translateImhHeroToTwenty();
-        fadeFooterTo("slow", 0.3);
+        footerBlur("blur(0.5rem)");
         setFooterZIndex(-1);
         if($("#single_shoe_specs").css("display") == "grid"){
             fadeSingleShoeTo("slow", 0.3);
@@ -147,24 +155,23 @@ $(document).ready(function(){
         setTop();  
         setZIndexImgHero(0); 
         setZIndexMainHead(1);
-        fadeFooterTo("slow", 1);
+        footerBlur("blur(0)");
         setFooterZIndex(0);
-        fadeImgHeroTo("blur(0)");
+        imgHeroBlur("blur(0)");
+        mainHeadBlur("blur(0)");
         if($("#single_shoe_specs").css("display") == "grid"){
             fadeSingleShoeTo("slow", 1);
         }
-        
-        $(".main-head").fadeTo("fast", 1).css("z-index","1");
         scaleLogo("scale(1)")
-        $("#logo1").css({"transform":"scale(1)", "transition":"transform 1s"});
-        $("#img_hero").css({"transform":"translateX(0%)", "transition":"transform 1s"});
-        $("#dropdown_id").css({"transform": "translateX(-150%) scaleX(0.25)", "transition":"transform 1s"}).hide(1000);
+        restoreImgHeroPosition();
+        hideDropdownMenu();
     });
     $(".shoes").click(function(){   
         setTop();     
         $(".main-head").fadeOut(500, function(){            
             $("#single_shoe_specs").fadeIn(500, function(){
                 $("#go_back").fadeIn(500);
+                $("#heart_icon").html(heart_icon);
                 scaleHeart("scale(1.3)");                
                 $("main").addClass("image_slider_container");
                 $("section#img_hero").removeClass("hero").addClass("image_slider");

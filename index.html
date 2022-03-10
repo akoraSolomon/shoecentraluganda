@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- <script src="./js/jquery-3.6.0.js"></script> -->
+    <script src="./js/jquery-3.6.0.js"></script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,7 +31,6 @@
       <nav id="hide_nav">
         <div class="menu_hamburger" >
           <img class="hamburger_containter" id="ham_icon" src="./icons/menu-hamburger-nav-svgrepo-com.svg" alt="">
-          <span id="cancel_dropdown1">&#10005;</span>
         </div>        
         <div class="logo">
           <div class="logo_container">
@@ -83,8 +82,8 @@
           <div class="back_arrow_and_heart">
             <span class = "go_back_arrow" id="go_back">&larr;</span>
             <div class="heart">
-              <h3>Favorite</h3>
-              <span>&#9825;</span>
+              <h3 id="favourite">Favorite</h3>
+              <span id="heart_icon"></span>
             </div>
           </div>   
         </div>             
@@ -94,6 +93,10 @@
             <p class="shoe_title"></p>
             <p class="shoe_subtitle"></p>
             <p class="shoe_price"></p>
+          </div>
+          <div class="shoe_size_and_color">
+            <div id="shoe_size"></div>
+            <div id="shoe_color"></div>
           </div>
           <div class="add_to_bag" id="buy">ADD TO BAG</div>   
         </div>
