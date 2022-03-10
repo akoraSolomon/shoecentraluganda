@@ -1,8 +1,7 @@
 $(document).ready(function(){
     $("section.shoe_details").hide();
-    $("#cancel_dropdown").hide();
-    $("#dropdown_id").hide();
-    $("#go_back").hide();    
+    $("#go_back").hide();
+    let cancel_icon = "&#10005;";    
     function setTop(){         
         return document.documentElement.scrollTop = 0;
     }
@@ -48,8 +47,8 @@ $(document).ready(function(){
         $("#img_hero").css({"filter":blur, "transition":"filter 1s"});
     }
 
-    function displayCancelDropdown(){
-        $("#cancel_dropdown").css("display","inline");
+    function displayCancelIcon(identifier, cancel){
+        $(identifier).html(cancel);
     }
     function scaleHeart(scale){
         $(".heart span").css({"transform":scale, "transition":"transform 1.5s"});
@@ -79,24 +78,24 @@ $(document).ready(function(){
             $(".search_shoe_wrapper").fadeIn(100, function(){
                 $("#search_shoe").animate({width:"100%"},"slow", function(){
                     $(this).focus();
-                    searchBarFocusIn();
+                    displayCancelIcon("#cancel_search", cancel_icon);
+                    searchBarFocusIn();                    
+                    scaleCancelSearchIcon("scale(0.7)", "transform 1s" );
+                    setZIndexImgHero(-1); 
                 });
-                scaleCancelSearchIcon("scale(0.7)", "transform 1s" )
-                setZIndexImgHero(-1); 
             });
         });      
            
     });
     $("#shopping_bag").click(function(){
-        let empty = "Your Bag Is Empty!";
-        let cancel_alert = "&#10005;";
+        let empty = "Your Bag Is Empty!";        
         let shopped_shoe_pairs = "Bag(0)";
 
         $("#bag_items_and_cancel_alert").addClass("bag_items_and_cancel_alert");
         $("#shopping_cart_notification").addClass("shop_bag_notification_content").text(empty);
         $("#bag_items").text(shopped_shoe_pairs).addClass("bag_items");
         $("#shopping_alert_container").fadeIn(500).addClass("shop_bag_alert");
-        $("#cancel_shop_bag_alert").html(cancel_alert).addClass("cancel_shop_bag_alert");
+        $("#cancel_shop_bag_alert").html(cancel_icon).addClass("cancel_shop_bag_alert");
         scaleLogo("scale(0.25)")
         fadeImgHeroTo("blur(1rem)");
         fadeMainHeadTo("fast", 0.3);
@@ -133,7 +132,7 @@ $(document).ready(function(){
         setZIndexDropdown_menu();
         setZIndexImgHero(-2); 
         fadeImgHeroTo("blur(0.5rem)");
-        displayCancelDropdown();
+        displayCancelIcon("#cancel_dropdown",cancel_icon);
         fadeMainHeadTo("slow", 0.3);
         scaleLogo("scale(0.25)")
         setTranslateDropdown();
