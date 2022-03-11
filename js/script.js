@@ -1,9 +1,11 @@
 $(document).ready(function(){
     $("section.shoe_details").hide();
-    $("#go_back").hide();
+    $(".search_shoe_wrapper").hide();  
+    $("#dropdown_id").hide(); 
     let cancel_icon = "&#10005;";   
     let heart_icon = "&#x2661;";
-    let ratings = "";
+    let stars = "&#x2605;&#x2605;&#x2605;&#x2605;";
+    let add_to_bag = "ADD TO BAG";
     function setTop(){         
         return document.documentElement.scrollTop = 0;
     }
@@ -56,7 +58,7 @@ $(document).ready(function(){
         $(identifier).html(cancel);
     }
     function scaleHeart(scale){
-        $(".heart span").css({"transform":scale, "transition":"transform 1.5s"});
+        $("#heart_icon").css({"transform":scale, "transition":"transform 1.5s"});
     }
     function hideDropdownMenu(){
         $("#dropdown_id").css({"transform": "translateX(-150%) scaleX(0.25)", "transition":"transform 1s"}).hide(1000);
@@ -170,7 +172,9 @@ $(document).ready(function(){
         setTop();     
         $(".main-head").fadeOut(500, function(){            
             $("#single_shoe_specs").fadeIn(500, function(){
-                $("#go_back").fadeIn(500);
+                $("#cancel_shoe").addClass("cancel_selected_shoe").html(cancel_icon);
+                $("#ratings").html(stars);
+                $("#buy").text(add_to_bag);                
                 $("#heart_icon").html(heart_icon);
                 scaleHeart("scale(1.3)");                
                 $("main").addClass("image_slider_container");
@@ -269,7 +273,7 @@ $(document).ready(function(){
     });
     $(".heart").click(function(){
     });
-    $("#go_back").click(function(){      
+    $("#cancel_shoe").click(function(){      
         $("#single_shoe_specs").fadeOut(100, function(){
             $(".main-head").fadeIn(500);
             $("#img_hero").fadeIn(500);
