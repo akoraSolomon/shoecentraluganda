@@ -4,6 +4,7 @@ $(document).ready(function(){
     $("#dropdown_id").hide(); 
     let cancel_icon = "&#10005;";   
     let heart_icon = "&#x2661;";
+    let heart_icon_clicked = "&#129505;";
     let stars = "&#x2605;&#x2605;&#x2605;&#x2605;";
     let add_to_bag = "ADD TO BAG";
     function setTop(){         
@@ -96,6 +97,9 @@ $(document).ready(function(){
             });
         });      
            
+    });
+    $("#heart_icon").click(function(){
+        $(this).html(heart_icon_clicked);
     });
     $("#shopping_bag").click(function(){
         let empty = "Your Bag Is Empty!";        

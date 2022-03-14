@@ -9,12 +9,12 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'League Spartan', sans-serif; 
   margin: 0;
   padding: 0;
 }
 h1 {
-  font-size: 2.6rem;
+  font-size: 3rem;
 }
 li,
 button,
@@ -31,7 +31,7 @@ h3 {
 }
 h4,
 h5 {
-  font-size: 2.8rem;
+  font-size: 2rem;
 }
 a {
   color: white;
@@ -187,6 +187,29 @@ button:focus {
 }
 /* ------------------------------------------ Mobile -------------- */
 @media only screen and (min-width:320px) and (max-width:479.98px) {  
+  #sizes, #colors, #details{
+    padding-left: 2rem;
+  }
+  #shoe_size, #shoe_color, #shoe_description{
+   background-color: rgba(0, 255, 255, 0.316);
+    border-radius: .5rem;
+    padding: 0 2rem;
+  }
+  .shoe_size span{
+    font-weight: bold;
+    font-size: 2.5rem;
+  }
+  .shoe_size{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 3rem auto;
+    border: 1px solid #131c27;
+    padding: 0 2rem;
+    border-radius: .5rem;
+  }
   .hamburger_containter{
     cursor: pointer;
     width: 3rem;
@@ -296,6 +319,7 @@ button:focus {
     justify-content:space-between;
     width: 70%;
     font-size: 3rem;
+    cursor: pointer;
   }
   
   .shoe_head{
@@ -308,14 +332,14 @@ button:focus {
     font-weight: bold;
   }
   .add_to_bag{
-    padding: 1rem;
+    padding: 2rem;
     cursor: pointer;
     border-radius: .5rem; 
     text-align: center;
     color:rgba(255, 255, 255, 0.878) ;
     background-color:#131c27;
     letter-spacing: 2px;
-    width: 90%;
+    width: 80%;
     margin: 2rem auto;
     font-weight: bolder;
   }
