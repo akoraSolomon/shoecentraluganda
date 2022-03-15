@@ -177,11 +177,11 @@
   .search_shoe{
     width: 100%;
     flex-wrap: nowrap;
-    padding:  2rem;
+    padding: 10rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-image: url("../img/male/m40.jpg");
+    background-image: url("../img/male/m41.jpg");
     background-position: center;
     background-size: cover;
   }
