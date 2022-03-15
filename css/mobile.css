@@ -176,16 +176,14 @@
   } 
   .search_shoe{
     width: 100%;
-   margin: auto;
     flex-wrap: nowrap;
-    padding: 0 2rem;
+    padding:  2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-image: url("../img/male/m40.jpg");
     background-position: center;
     background-size: cover;
-    min-height: 20vh;
   }
   
   .search_shoe form input{
