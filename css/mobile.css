@@ -75,10 +75,7 @@
     position: sticky;
     top: 0%;
     z-index: 1;
-    display: none;
-    background-image: url("../img/male/m40.jpg");
-    background-position: center;
-    background-size: cover;
+    display: none;    
   }
   .hero{
     min-height: 90vh;
@@ -178,14 +175,17 @@
     width: 90%;
   } 
   .search_shoe{
-    width: 90%;
-    margin: auto;
+    width: 100%;
+   margin: auto;
     flex-wrap: nowrap;
-    padding: 0.5rem;
+    padding: 0 2rem;
     display: flex;
-    min-height: 15vh;
     justify-content: space-between;
     align-items: center;
+    background-image: url("../img/male/m40.jpg");
+    background-position: center;
+    background-size: cover;
+    min-height: 20vh;
   }
   
   .search_shoe form input{
