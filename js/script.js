@@ -31,7 +31,7 @@ $(document).ready(function(){
             $("#search_shoe").css({"border": "1px solid #131c27", "background": "white"});
     }
     function searchBarFocusOut(){
-        $(".cancel_search_bar").css({"transform":"scale(1)"});
+        $(".cancel_search_bar").css({"transform":"scale(0.5)"});
         $("#search_shoe").css({"border": "none","background-color": "rgba(238, 238, 238, 0.248)", "box-shadow":"0.1em 0.1em 0.25em #131c2754, -0.1em -0.1em 0.25em  #131c2754","transition": "all 1s"});
 
     }

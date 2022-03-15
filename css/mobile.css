@@ -76,7 +76,7 @@
     top: 0%;
     z-index: 1;
     display: none;
-    background-image: url("./img/male/m40.jpg");
+    background-image: url("../img/male/m40.jpg");
     background-position: center;
     background-size: cover;
   }
@@ -200,7 +200,7 @@
     font-size: small;          
   }
   .search_shoe form{
-    flex-grow: 2;
+    flex-grow: 3;
 }
   .cancel_search_bar{
       flex-grow: 1;
