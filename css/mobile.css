@@ -76,6 +76,9 @@
     top: 0%;
     z-index: 1;
     display: none;
+    background-image: url("/img/male/m40.jpg");
+    background-position: center;
+    background-size: cover;
   }
   .hero{
     min-height: 90vh;
@@ -178,19 +181,17 @@
     width: 90%;
     margin: auto;
     flex-wrap: nowrap;
-    align-items: center;
     padding: 0.5rem;
     display: flex;
     min-height: 15vh;
+    justify-content: space-between;
+    align-items: center;
   }
-  .search_shoe form{
-    flex: 6 1 25rem;  
-      
-  }
+  
   .search_shoe form input{
     width: 0%;   
     margin: 0 auto; 
-    border-radius: 17px;
+    border-radius: 2rem;
     border: none;
     outline: none;
     padding: 1rem 4rem;
@@ -198,16 +199,16 @@
     box-shadow:  0.1em 0.1em 0.25em #131c2754, -0.1em -0.1em 0.25em  #131c2754;
     font-size: small;          
   }
+  .search_shoe form{
+    flex-grow: 2;
+}
   .cancel_search_bar{
-    flex: 1 1 1.8rem;
-    color: #131c27ad;
+      flex-grow: 1;
+    color: white;
     font-size: 3rem;
     cursor: pointer;
-    background-color:rgba(238, 238, 238, 0.248);
-    box-shadow:  0.1em 0.1em 0.2em #131c2754, -0.09em -0.09em 0.2em  #131c2754;
     text-align: center;
-    border-radius: 100px;
-    margin-left: 1rem;
+    padding-top: 0.5rem;
   }
   .menu_hamburger{
     position: relative;
