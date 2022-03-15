@@ -76,7 +76,7 @@
     top: 0%;
     z-index: 1;
     display: none;
-    background-image: url("/img/male/m40.jpg");
+    background-image: url("./img/male/m40.jpg");
     background-position: center;
     background-size: cover;
   }
