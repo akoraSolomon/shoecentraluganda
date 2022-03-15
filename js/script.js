@@ -12,12 +12,12 @@ $(document).ready(function(){
     }
     function setBorderOnClickedIcons(identifier){
         if(identifier == ".menu_hamburger"){
-            $("#shopping_bag").css({"border":"none"});
-            $(identifier).css({"border":"1px solid #131c27"});
+            $("#shopping_bag").css({"background-color":"white"});
+            $(identifier).css({"border-radius":"50%","background-color":"#ccffcc"});
         }
         else{
-            $(".menu_hamburger").css({"border":"none"});
-            $(identifier).css({"border":"1px solid #131c27"});
+            $(".menu_hamburger").css({"background-color":"white"});
+            $(identifier).css({"border-radius":"50%", "background-color":"#ccffcc"});
         }       
     }
     function footerBlur(blur){
@@ -176,7 +176,7 @@ $(document).ready(function(){
         setTop();     
         $(".main-head").fadeOut(500, function(){            
             $("#single_shoe_specs").fadeIn(500, function(){
-                $("#cancel_shoe").addClass("cancel_selected_shoe").html(cancel_icon);
+                $("#cancel_shoe").html(cancel_icon);
                 $("#ratings").html(stars);
                 $("#buy").text(add_to_bag);                
                 $("#heart_icon").html(heart_icon);

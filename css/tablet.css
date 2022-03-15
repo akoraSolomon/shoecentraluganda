@@ -1,0 +1,212 @@
+.cancel_selected_shoe{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 2rem;
+    cursor: pointer;
+    color: #131c27;    
+  }
+  .bag_items_and_cancel_alert{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin: 2rem 3rem;
+  }
+  .cancel_shop_bag_alert{
+    cursor: pointer;
+    font-size: 3rem;
+    font-weight: lighter;
+    color: #131c2790;
+  }
+  .bag_items{
+    font-weight: bold;
+  }
+  .shop_bag_notification_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12rem;
+  }
+  
+  .shop_bag_alert{
+    color: #131c27;
+    z-index: 2;
+    font-family: 'League Spartan', sans-serif;
+    top: 0%;
+    right: 0%;
+    background-color:rgb(255, 255, 255); 
+    border-end-end-radius: 5px;
+    width: 80%;
+    height: 100vh;
+    position: fixed;  
+    box-shadow:  0em 0em 0.2em #131c27b8, 0.25em 0.1em 0.2em #131c277c;
+    border-top: none;
+    
+  }
+  .search_shoe_wrapper{
+    position: sticky;
+    top: 0%;
+    z-index: 1;
+    display: none;
+  }
+  .hero{
+    min-height: 90vh;
+    width: 98%;
+    margin: 1.5rem auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    position: relative;
+  }
+  .image_slider{
+    display: block;
+    width: max-content;
+    margin: 1rem 0;
+    max-height: 10vh;
+  }
+  .image_slider > img{
+    max-height: 10vh;
+    max-width: 50%;
+  }
+  .image_slider_container{
+    overflow-x: hidden;
+    width: 100%;
+  }
+  .shoe_details {
+    width: 100%;
+    min-height: 50vh;
+    grid-template-columns: repeat(1, 1fr);
+    display: none;
+  }
+  .shoe_details > img{
+    max-height: auto;
+    max-width: 98%;
+    border-radius: 0.5rem;
+    margin: 0.5rem auto;    
+  }
+  .hero > img{
+    max-height: auto;
+    max-width:100%;
+    border-radius: 0.5rem;    
+  }
+  .single_shoe_container{
+    margin: 2rem 0;
+    font-family: 'League Spartan', sans-serif;   
+    
+  }
+  .stars_and_heart{
+    display: flex;
+    padding: 0;
+    margin: .5rem auto;
+    align-items: center;
+    justify-content:space-between;
+    width: 70%;
+    font-size: 3rem;
+  }
+  
+  .shoe_head{
+    padding: 0rem;
+    margin: 1rem auto;
+    text-align: center;
+    width: 95%;   
+  }
+  .shoe_title{
+    font-weight: bold;
+  }
+  .add_to_bag{
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: .5rem; 
+    text-align: center;
+    color:rgba(255, 255, 255, 0.878) ;
+    background-color:#131c27;
+    letter-spacing: 2px;
+    width: 90%;
+    margin: 2rem auto;
+    font-weight: bolder;
+  }
+  .add_to_bag_inactive{
+    flex: 2 1 40%;
+    padding: 1rem;
+    cursor: not-allowed;
+    border-radius: 1rem; 
+    margin: 2rem auto;
+    text-align: center;
+    color:rgba(255, 255, 255, 0.878) ;
+    background-color:rgba(255, 0, 0, 0.207) ;
+    width: 98%;
+  } 
+  .search_shoe{
+    width: 90%;
+    margin: auto;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 0.5rem;
+    display: flex;
+    min-height: 15vh;
+  }
+  .search_shoe form{
+    flex: 6 1 25rem;  
+      
+  }
+  .search_shoe form input{
+    width: 0%;   
+    margin: 0 auto; 
+    border-radius: 17px;
+    border: none;
+    outline: none;
+    padding: 1rem 4rem;
+    background-color:rgba(238, 238, 238, 0.248);
+    box-shadow:  0.1em 0.1em 0.25em #131c2754, -0.1em -0.1em 0.25em  #131c2754;
+    font-size: small;          
+  }
+  .cancel_search_bar{
+    flex: 1 1 1.8rem;
+    color: #131c27ad;
+    font-size: 3rem;
+    cursor: pointer;
+    background-color:rgba(238, 238, 238, 0.248);
+    box-shadow:  0.1em 0.1em 0.2em #131c2754, -0.09em -0.09em 0.2em  #131c2754;
+    text-align: center;
+    border-radius: 100px;
+    margin-left: 1rem;
+  }
+  .menu_hamburger{
+    position: relative;
+    display: inline-block;
+  }
+ 
+  #cancel_dropdown{
+    color: #131c27;
+    font-size: 3rem;
+    cursor: pointer;
+    position: absolute;
+    left: 80%;
+    margin-bottom: 2rem;
+  }
+  .dropdown_content{    
+    display: none;
+    background-color:rgba(255, 255, 255, 0.878); 
+    border-end-end-radius: 5px;
+    width: 65%;
+    height: 100vh;
+    position: fixed;  
+    top: 0%;
+    box-shadow:  0.25em 0.1em 0.2em #131c27b8;
+    border-top: none;
+  }
+  .dropdown_content a{  
+    background-color:rgba(255, 255, 255, 0.878);  
+    display: block;
+    padding: 3rem 3rem;
+    font-size: 2rem;
+    color: #131c27;
+  }
+  .gender,.labels  {
+    border-top: 1px solid #323c4851;
+  }
+  
+  /* clears the ‘X’ from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
