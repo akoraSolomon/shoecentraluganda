@@ -136,6 +136,7 @@ nav {
     font-size: 3rem;
     cursor: pointer;
     min-height: 5vh;
+    
   }
   #ratings{
     flex-grow: 1;
@@ -192,8 +193,26 @@ nav {
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
+  animation: changeBackground 8s infinite alternate ease-in-out 2s;
 }
+@keyframes changeBackground {
+  0%{
+    background:linear-gradient(rgba(0, 0, 0, 0.5), transparent), url("../img/male/m40.jpg");
+    background-position: center;
+  background-size: cover;
+  }
+  25%{
+    background:linear-gradient(rgba(0, 0, 0, 0.5), transparent), url("../img/male/m34.jpg");
+    background-position: center;
+  background-size: cover;
+  }
+  50%{
+    background:linear-gradient(rgba(0, 0, 0, 0.5), transparent), url("../img/male/m17.jpg");
+    background-position: center;
+  background-size: cover;
+  }
   
+}
 .search_shoe form input{
   width: 0%;   
   margin: 0 auto; 

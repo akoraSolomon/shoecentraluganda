@@ -131,6 +131,8 @@ footer {
   background: white;
   color: #131c27;
   font-family: 'League Spartan', sans-serif; 
+  background:linear-gradient(rgba(19, 28, 39, 0.2), transparent);
+  text-align: center;
 }
 .form-wrapper label {
   margin: 0rem 3rem;
