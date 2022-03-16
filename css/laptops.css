@@ -1,0 +1,27 @@
+html {
+    font-size: 50%;
+}
+.hero{
+    min-height: 90vh;
+    width: 98%;
+    margin: 1.5rem auto;
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    position: relative;
+  }
+nav {
+    min-height: 7vh;
+    display: flex;
+    width: 90%;
+    margin: auto;
+    align-items: center;
+    padding: 0.5rem;
+    flex-wrap: nowrap;
+  }
+.logo {
+flex: 7 1 40rem;  
+}
+.search_and_bag_icons img{   
+    width:4rem;
+    height:4rem;
+}

@@ -61,12 +61,12 @@ button:hover {
   z-index: 1;
 }
 nav {
-  min-height: 10vh;
+  min-height: 5vh;
   display: flex;
   width: 90%;
   margin: auto;
   align-items: center;
-  padding: 0.5rem;
+  padding: 1rem;
   flex-wrap: nowrap;
 }
 .menu_hamburger{ 
@@ -92,13 +92,13 @@ nav {
   justify-content: space-between;
 }
 .search_and_bag_icons img{   
-  width:calc(4.5rem - 0.25vw);
-  height: 4.5rem;
+  width:4.5rem;
+  height:4.5rem;
   cursor: pointer;
   padding: .5rem;
 }
 .logo {
-  flex: 2 1 20rem;  
+  flex: 5 1 20rem;  
   }
 .logo_container{
   display: flex;
@@ -163,27 +163,6 @@ footer {
 button:focus {
   background: #273950;
   outline-style: solid;
-}
-
-/*MEDIA QUERIES*/
-@media screen and (max-width: 933px) {
-  html {
-    font-size: 45%;
-  }
-  nav {
-    text-align: center;
-  }
-  #logo {
-    padding: 2rem;
-  }
-  
-  
-  .footer-wrapper {
-    text-align: center;
-  }
-  .footer-wrapper h5 {
-    padding-bottom: 3rem;
-  }
-}  
+} 
  
   

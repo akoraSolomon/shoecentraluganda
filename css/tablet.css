@@ -1,3 +1,6 @@
+html {
+  font-size: 47%;
+}
 .cancel_selected_shoe{
     display: flex;
     align-items: center;
