@@ -22,7 +22,7 @@
 
         .stars_and_heart{
             @include flex(space-between,row ,center);
-            margin: 0 auto;
+            margin: 1rem auto;
             width: 80%;
             font-size: 3rem;
             cursor: pointer;
@@ -39,7 +39,7 @@
         }
 
         img{
-            height: 80;
+            height: 80%;
             width: 80%;
             border-radius: 0.5rem;
             object-fit: cover;  
@@ -94,10 +94,11 @@
                 width: 90%;
                 margin: 1rem auto;
                 border-bottom: 1px solid $special_color;
+                padding: 0 0 0 1rem;
 
                 .shoecolor_n_plusicon{
                     @include flex(flex-end,row ,center);
-                    flex: 3 1 60rem;
+                    flex: 2 1 40rem;
                     margin: 0 1rem;
 
                     #plusicon{
@@ -111,12 +112,12 @@
                     p{
                         flex: 1 1 5rem;
                         text-align: center;
-                        margin-right: 1rem;
+                        margin-right: .5rem;
                     }
                     input{
-                        flex: 1 1 5rem;
+                        flex: 1 1 20rem;
                         text-align: left;
-                        width: 10%;
+                        width: 50%;
                         padding: 0 .5rem;
                         font-weight: 100;
                         font-size: $text;
@@ -169,7 +170,7 @@
         background-color:rgb(255, 255, 255); 
         border-end-end-radius: 5px;
         width: 80%;
-        height: 50vh;
+        height: 100vh;
         position: fixed;  
         box-shadow: -10px 10px 10px rgba(19, 28, 39, 0.1),  -20px 20px 20px  rgba(19, 28, 39, 0.1);
         border-top: none;
@@ -182,7 +183,7 @@
             background-color:$text_color;
             letter-spacing: 2px;
             width: 90%;
-            margin: 2rem auto;
+           margin: 5rem auto 1rem auto;
             font-weight: bolder;
         }
         .cost_head{
@@ -204,7 +205,7 @@
             .totalhead_n_cost{
                 @include flex(space-between,row ,center);
                 font-weight: bold;
-                margin: 2rem auto;
+                margin: 3rem auto;
             }
         }
     }
@@ -223,7 +224,7 @@
     }
     .shop_bag_notification_content{
         @include flex(center,row ,center);
-        margin: 5rem auto;  
+        margin: 7rem auto;  
         width: 90%;  
         border-bottom: 1px solid $special_color;
     }
@@ -276,7 +277,7 @@
     .dropdown_content{    
         background-color:$bg_color; 
         border-end-end-radius: 5px;
-        width: 65%;
+        width: 80%;
         height: 100vh;
         position: fixed;  
         top: 0%;

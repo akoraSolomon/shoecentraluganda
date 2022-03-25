@@ -311,7 +311,7 @@ footer {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    margin: 0 auto;
+    margin: 1rem auto;
     width: 80%;
     font-size: 3rem;
     cursor: pointer;
@@ -330,7 +330,7 @@ footer {
     color: #131c2782;
   }
   .shoe_details img {
-    height: 80;
+    height: 80%;
     width: 80%;
     border-radius: 0.5rem;
     -o-object-fit: cover;
@@ -423,6 +423,7 @@ footer {
     width: 90%;
     margin: 1rem auto;
     border-bottom: 1px solid #525252;
+    padding: 0 0 0 1rem;
   }
   .shoe_details .single_shoe_container .shoecolor_n_quantity .shoecolor_n_plusicon {
     display: -webkit-box;
@@ -438,9 +439,9 @@ footer {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-box-flex: 3;
-        -ms-flex: 3 1 60rem;
-            flex: 3 1 60rem;
+    -webkit-box-flex: 2;
+        -ms-flex: 2 1 40rem;
+            flex: 2 1 40rem;
     margin: 0 1rem;
   }
   .shoe_details .single_shoe_container .shoecolor_n_quantity .shoecolor_n_plusicon #plusicon {
@@ -468,14 +469,14 @@ footer {
         -ms-flex: 1 1 5rem;
             flex: 1 1 5rem;
     text-align: center;
-    margin-right: 1rem;
+    margin-right: .5rem;
   }
   .shoe_details .single_shoe_container .shoecolor_n_quantity .shoequantity input {
     -webkit-box-flex: 1;
-        -ms-flex: 1 1 5rem;
-            flex: 1 1 5rem;
+        -ms-flex: 1 1 20rem;
+            flex: 1 1 20rem;
     text-align: left;
-    width: 10%;
+    width: 50%;
     padding: 0 .5rem;
     font-weight: 100;
     font-size: 2rem;
@@ -537,7 +538,7 @@ footer {
     background-color: white;
     border-end-end-radius: 5px;
     width: 80%;
-    height: 50vh;
+    height: 100vh;
     position: fixed;
     -webkit-box-shadow: -10px 10px 10px rgba(19, 28, 39, 0.1), -20px 20px 20px rgba(19, 28, 39, 0.1);
             box-shadow: -10px 10px 10px rgba(19, 28, 39, 0.1), -20px 20px 20px rgba(19, 28, 39, 0.1);
@@ -552,7 +553,7 @@ footer {
     background-color: #131c27;
     letter-spacing: 2px;
     width: 90%;
-    margin: 2rem auto;
+    margin: 5rem auto 1rem auto;
     font-weight: bolder;
   }
   .shop_bag_alert .cost_head {
@@ -611,7 +612,7 @@ footer {
         -ms-flex-align: center;
             align-items: center;
     font-weight: bold;
-    margin: 2rem auto;
+    margin: 3rem auto;
   }
   .bag_items_and_cancel_alert {
     display: -webkit-box;
@@ -652,7 +653,7 @@ footer {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    margin: 5rem auto;
+    margin: 7rem auto;
     width: 90%;
     border-bottom: 1px solid #525252;
   }
@@ -724,7 +725,7 @@ footer {
   .dropdown_content {
     background-color: white;
     border-end-end-radius: 5px;
-    width: 65%;
+    width: 80%;
     height: 100vh;
     position: fixed;
     top: 0%;

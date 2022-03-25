@@ -104,6 +104,9 @@ $(document).ready(function(){
     $("#search_icon").click(function(){
         $(this).css({transform:"scale(0.7)", transition:"transform 1s"});
         $(".main-head").fadeOut(100, function(){
+            imgHeroBlur("blur(0.2rem)");
+            $("#img_hero").css({opacity:"0.7", transition:"opacity 1s"});
+
             $(".search_shoe_wrapper").toggle("fast", function(){
                 $("#search_shoe").animate({width:"100%"},"fast", function(){
                     $(this).focus();
@@ -152,6 +155,8 @@ $(document).ready(function(){
     $("#cancel_search").click(cancelSearchBar = function(){   
         $("#search_icon").css({transform:"scale(1)", transition:"transform 2s"});      
         $("#search_shoe").animate({width:"0%"},"slow", function(){
+            imgHeroBlur("blur(0)");
+            $("#img_hero").css({opacity:"1", transition:"opacity 1s"});
             $(".search_shoe_wrapper").toggle("slow");
             $(".main-head").fadeIn(500, function(){
                 setZIndexImgHero(0);
