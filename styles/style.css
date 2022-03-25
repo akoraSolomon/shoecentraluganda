@@ -527,8 +527,8 @@ footer {
     min-height: 5vh;
   }
   .image_slider img {
-    height: 5vh;
-    width: 10%;
+    height: 10vh;
+    width: 20%;
   }
   .shop_bag_alert {
     z-index: 2;
