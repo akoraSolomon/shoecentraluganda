@@ -330,7 +330,7 @@ footer {
     color: #131c2782;
   }
   .shoe_details img {
-    height: 80%;
+    height: 100%;
     width: 80%;
     border-radius: 0.5rem;
     -o-object-fit: cover;
@@ -440,8 +440,8 @@ footer {
         -ms-flex-align: center;
             align-items: center;
     -webkit-box-flex: 2;
-        -ms-flex: 2 1 40rem;
-            flex: 2 1 40rem;
+        -ms-flex: 2 1 30rem;
+            flex: 2 1 30rem;
     margin: 0 1rem;
   }
   .shoe_details .single_shoe_container .shoecolor_n_quantity .shoecolor_n_plusicon #plusicon {
@@ -472,12 +472,12 @@ footer {
     margin-right: .5rem;
   }
   .shoe_details .single_shoe_container .shoecolor_n_quantity .shoequantity input {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 20rem;
-            flex: 1 1 20rem;
+    -webkit-box-flex: 2;
+        -ms-flex: 2 1 20rem;
+            flex: 2 1 20rem;
     text-align: left;
     width: 50%;
-    padding: 0 .5rem;
+    padding: 0 1rem;
     font-weight: 100;
     font-size: 2rem;
   }

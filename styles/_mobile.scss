@@ -39,7 +39,7 @@
         }
 
         img{
-            height: 80%;
+            height: 100%;
             width: 80%;
             border-radius: 0.5rem;
             object-fit: cover;  
@@ -98,7 +98,7 @@
 
                 .shoecolor_n_plusicon{
                     @include flex(flex-end,row ,center);
-                    flex: 2 1 40rem;
+                    flex: 2 1 30rem;
                     margin: 0 1rem;
 
                     #plusicon{
@@ -115,10 +115,10 @@
                         margin-right: .5rem;
                     }
                     input{
-                        flex: 1 1 20rem;
+                        flex: 2 1 20rem;
                         text-align: left;
                         width: 50%;
-                        padding: 0 .5rem;
+                        padding: 0 1rem;
                         font-weight: 100;
                         font-size: $text;
                     }
