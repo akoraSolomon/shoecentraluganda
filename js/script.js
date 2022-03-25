@@ -286,7 +286,7 @@ $(document).ready(function(){
                 $("#heart_icon").html(heart_icon);
                 scaleHeart("scale(1.3)");                
                 $("section#img_hero").removeClass("hero").addClass("image_slider");
-                $("section.img_slider").on("touchmove", function(){
+                $("section.image_slider").on("touchmove", function(){
                     if($(this).css("margin-left") == "0px"){
                         $(this).animate({marginLeft : "-=210px"}, "slow");
                     }                    
