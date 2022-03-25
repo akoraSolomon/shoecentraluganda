@@ -1,0 +1,9 @@
+@media screen and (max-width:810px) {
+    html{
+        font-size: 60%;
+    }
+     // --------------------HERO SECTION ---------------------------------------
+     .hero{   
+        grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+    } 
+}

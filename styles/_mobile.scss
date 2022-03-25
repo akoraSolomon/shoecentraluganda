@@ -1,0 +1,341 @@
+/* ------------------------------MEDIA QUERIES SECTION----------------------------- */
+@media screen and (max-width: 550px) {    
+    html {
+        font-size: 56.5%;
+    }
+    main{
+        overflow-x: hidden;
+        width: 100%;
+    }
+     // --------------------HERO SECTION ---------------------------------------
+    .hero{   
+        grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+    } 
+
+    // --------------------SELECTED SHOE SECTION ---------------------------------------
+    .shoe_details {
+        display: grid;
+        width: 98%;
+        min-height: 80vh;
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0.5rem auto;
+
+        .stars_and_heart{
+            @include flex(space-between,row ,center);
+            margin: 0 auto;
+            width: 80%;
+            font-size: 3rem;
+            cursor: pointer;
+            min-height: 5vh; 
+
+            #heart_icon, #ratings{
+                flex-grow: 1;
+            }
+            #cancel_shoe{
+                flex-grow: 2;
+                text-align: end;
+                color: $cancel_color;
+            }   
+        }
+
+        img{
+            height: 80;
+            width: 80%;
+            border-radius: 0.5rem;
+            object-fit: cover;  
+            margin: auto;   
+        }
+        .single_shoe_container{
+            margin: 1rem 0;
+            font-family: 'League Spartan', sans-serif;
+
+            .shoe_head{
+                padding: 0rem;
+                margin: 1rem auto;
+                text-align: center;
+                width: 95%;  
+                
+                .shoe_title{
+                    font-weight: bold;
+                }
+            } 
+
+            .shoe_size{
+                @include flex(space-between,row ,center);
+                width: 90%;
+                margin: 1rem auto;
+                border-bottom: 1px solid $special_color;
+                padding: 0 1rem; 
+                p{
+                    flex: 4 1 60rem;
+                }  
+                span{
+                    font-size: 4rem;
+                    font-weight: 100;
+                }
+            } 
+            .shoeinfo_n_plusicon{
+                @include flex(space-between,row ,center);
+                width: 90%;
+                margin: 1rem auto;
+                border-bottom: 1px solid $special_color;
+                padding: 0 1rem;
+
+                #shoeinfo_head{
+                    flex: 4 1 60rem;
+                }
+                #shoeinfo_plusicon{
+                    font-size: 4rem;
+                    font-weight: 100;
+                }
+            }
+            .shoecolor_n_quantity{
+                @include flex(space-between,row ,center);
+                width: 90%;
+                margin: 1rem auto;
+                border-bottom: 1px solid $special_color;
+
+                .shoecolor_n_plusicon{
+                    @include flex(flex-end,row ,center);
+                    flex: 3 1 60rem;
+                    margin: 0 1rem;
+
+                    #plusicon{
+                        padding-left: 1rem;
+                        font-size: 4rem;
+                        font-weight: 100;
+                    }
+                }
+                .shoequantity{
+                    @include flex(flex-start,row ,center);
+                    p{
+                        flex: 1 1 5rem;
+                        text-align: center;
+                        margin-right: 1rem;
+                    }
+                    input{
+                        flex: 1 1 5rem;
+                        text-align: left;
+                        width: 10%;
+                        padding: 0 .5rem;
+                        font-weight: 100;
+                        font-size: $text;
+                    }
+                }
+            }
+            .add_to_bag{
+                padding: 2rem;
+                cursor: pointer;
+                border-radius: .5rem; 
+                text-align: center;
+                color:rgba(255, 255, 255, 0.878) ;
+                background-color:$text_color;
+                letter-spacing: 2px;
+                width: 90%;
+                margin: 2rem auto;
+                font-weight: bolder;
+            }
+            .add_to_bag_inactive{
+                flex: 2 1 40%;
+                padding: 1rem;
+                cursor: not-allowed;
+                border-radius: 1rem; 
+                margin: 2rem auto;
+                text-align: center;
+                color:rgba(255, 255, 255, 0.878) ;
+                background-color:rgba(255, 0, 0, 0.207) ;
+                width: 90%;
+            }
+        }        
+         
+    }
+    .image_slider{
+        @include flex(flex-start,row, center);
+         width: max-content;  
+         margin: 1rem 0;  
+         min-height: 5vh;        
+         img{
+             height: 5vh;
+             width: 10%;
+         }
+     }
+    
+    // --------------------SHOPPING BAG SECTION ---------------------------------------
+    .shop_bag_alert{
+        z-index: 2;
+        font-family: 'League Spartan', sans-serif;
+        top: 0%;
+        left: 100%;    
+        background-color:rgb(255, 255, 255); 
+        border-end-end-radius: 5px;
+        width: 80%;
+        height: 50vh;
+        position: fixed;  
+        box-shadow: -10px 10px 10px rgba(19, 28, 39, 0.1),  -20px 20px 20px  rgba(19, 28, 39, 0.1);
+        border-top: none;
+        .checkout{
+            padding: 2rem;
+            cursor: pointer;
+            border-radius: .5rem; 
+            text-align: center;
+            color:rgba(255, 255, 255, 0.878) ;
+            background-color:$text_color;
+            letter-spacing: 2px;
+            width: 90%;
+            margin: 2rem auto;
+            font-weight: bolder;
+        }
+        .cost_head{
+            width: 90%;
+            h2{
+                margin:3rem auto;
+                text-align: center;
+            }
+        }
+        .payments{
+            width: 90%;
+            margin: 1rem auto;
+            .subtotal{
+                @include flex(space-between,row ,center);
+            }
+            .delivery{
+                @include flex(space-between,row ,center);
+            }
+            .totalhead_n_cost{
+                @include flex(space-between,row ,center);
+                font-weight: bold;
+                margin: 2rem auto;
+            }
+        }
+    }
+    .bag_items_and_cancel_alert{
+        @include flex(space-between,row ,center);
+        margin: 2rem 3rem;
+        .cancel_shop_bag_alert{
+            cursor: pointer;
+            font-size: 3rem;
+            font-weight: lighter;
+            color: $cancel_color;
+        }
+        .bag_items{
+            font-weight: bold;
+        }        
+    }
+    .shop_bag_notification_content{
+        @include flex(center,row ,center);
+        margin: 5rem auto;  
+        width: 90%;  
+        border-bottom: 1px solid $special_color;
+    }
+    // --------------------SEARCH SHOE SECTION ---------------------------------------
+    .search_shoe_wrapper{
+        position: sticky;
+        top: 0%;
+        z-index: 1;
+        display: none; 
+        animation: search_bar_show 1s linear forwards;
+        transform-box: fill-box;
+
+        .search_shoe{
+            @include flex(space-between,row ,center);
+            width: 100%;
+            flex-wrap: nowrap;
+            padding: 10rem 2rem;
+            background:linear-gradient(rgba(0, 0, 0, 0.6), transparent), url("../img/male/m41.jpg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            animation: changeBackground 8s infinite alternate ease-in-out 2s;
+            
+            form{
+                flex-grow: 3;
+                input{
+                    width: 0%;   
+                    margin: 0 auto; 
+                    border-radius: 8rem;
+                    border: none;
+                    outline: none;
+                    padding: 1rem 4rem;
+                    background-color:rgba(238, 238, 238, 0.248);
+                    box-shadow:  0.1em 0.1em 0.25em #131c2754, -0.1em -0.1em 0.25em  #131c2754;
+                    font-size:medium; 
+                }
+            }
+            .cancel_search_bar{
+                flex-grow: 1;
+                color: white;
+                font-size: 3rem;
+                cursor: pointer;
+                text-align: center;
+                padding-top: 0.25rem;
+                font-weight: 100;
+            }
+        }
+    }
+     /* -------------------------------SLIDING MENU SECTION------------------------------- */
+    .dropdown_content{    
+        background-color:$bg_color; 
+        border-end-end-radius: 5px;
+        width: 65%;
+        height: 100vh;
+        position: fixed;  
+        top: 0%;
+        box-shadow: 10px 10px 10px rgba(19, 28, 39, 0.1),  20px 20px 20px  rgba(19, 28, 39, 0.1);
+        border-top: none;
+
+        a{   
+            display: block;
+            padding: 3rem 3rem;
+            font-size: 2rem;
+            font-weight: bold;
+            .gender,.labels  {
+                border-top: 1px solid $cancel_color;
+            }
+        }
+
+        #cancel_dropdown{
+            color: $cancel_color;
+            font-size: 3rem;
+            cursor: pointer;
+            position: absolute;
+            left: 80%;
+            margin-bottom:2rem;
+            font-weight: 100;
+        }
+    }
+      
+    /* clears the ‘X’ from Chrome */
+    input[type="search"]::-webkit-search-decoration,
+    input[type="search"]::-webkit-search-cancel-button,
+    input[type="search"]::-webkit-search-results-button,
+    input[type="search"]::-webkit-search-results-decoration { display: none; }
+    
+    /* -------------------------------ANIMATIONS------------------------------- */
+   // search bar background animations
+    @keyframes search_bar_show {
+        from{
+            transform: translateY(-10%) rotateX(-90deg) ;
+        }
+        to{
+            transform: translateY(0%)  rotateX(-0deg);
+        }  
+    }
+    
+    @keyframes changeBackground {
+        0%{
+          background:linear-gradient(rgba(0, 0, 0, 0.6), transparent), url("../img/male/m40.jpg");
+          background-position: center;
+          background-size: cover;
+        }
+        25%{
+          background:linear-gradient(rgba(0, 0, 0, 0.6), transparent), url("../img/male/m34.jpg");
+          background-position: center;
+        background-size: cover;
+        }
+        50%{
+          background:linear-gradient(rgba(0, 0, 0, 0.6), transparent), url("../img/male/m17.jpg");
+          background-position: center;
+          background-size: cover;
+        }  
+      }
+}

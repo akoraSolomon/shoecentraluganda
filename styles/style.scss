@@ -1,0 +1,23 @@
+$header1:2.5rem;
+$header2: 2rem;
+$header3: 1.5rem;
+$header4: 1rem;
+$text: 2rem;
+$big_text: 2.4rem;
+$cancel_color:#131c2782;
+$special_color:#525252;
+$text_color:#131c27;
+$icon_size:2.6rem;  /* padding left and right */
+$bg_color:white;
+
+@mixin flex($justify, $direction, $align) {
+    display: flex;
+    justify-content: $justify;
+    flex-direction: $direction;
+    align-items: $align;
+}
+
+@import "global";
+@import "tablet";
+@import "mobile";
+
