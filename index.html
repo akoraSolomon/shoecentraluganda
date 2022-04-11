@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- <script src="./js/jquery-3.6.0.js"></script> -->
+    
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="descriptioni" content="Travelly is a travel agency website that helps you pick out your next vacation." />
     <meta name="robots" content="index, follow" />
 
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
    
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300&display=swap" rel="stylesheet"> 
     <link rel="icon" href="/icons/shoes.png" />
@@ -19,21 +15,26 @@
    
     <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300&family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300&family=Montserrat:wght@100&display=swap" rel="stylesheet">
 
-   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.css" integrity="sha512-1hsteeq9xTM5CX6NsXiJu3Y/g+tj+IIwtZMtTisemEv3hx+S9ngaW4nryrNcPM4xGzINcKbwUJtojslX2KG+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./styles/style.css">
     <title> Shoe Central | Uganda - A one stop shopping center for any kind of shoe </title>
   </head>
-  <body>
+  <body>   
     <header class="main-head">
       <nav id="hide_nav">
+        
         <img class="menu_hamburger icons" id="ham_icon" src="./icons/menu-hamburger-nav-svgrepo-com.svg" alt="">
         <h1 class="logo_container" id="logo1">Shoe Central</h1>
         <div class="search_and_bag_icons">
           <img id="search_icon" class="icons" src="./icons/search-svgrepo-com.svg" alt="">
-          <img id="shopping_bag"  class="icons" src="./icons/shopping-bag-svgrepo-com.svg" alt="">                                 
+          <div class="bag_n_items">
+            <i id="shopping_bag" class="fa-solid fa-bag-shopping icons"></i>                 
+            <p id="num_shopped_shoes">0</p>
+          </div>
+                                     
         </div>              
       </nav>
     </header>
@@ -61,7 +62,12 @@
             <p id="total_cost"></p>
           </div>
         </div>
-        <div id="go_to_checkout" class="checkout"></div>
+        <div id="go_to_checkout" class="checkout">
+          <span></span>
+        </div>
+        <div id="clear_shopping_bag" class="clear_shopping">
+          <span></span>
+        </div>
       </div>
     </section>
     
@@ -75,13 +81,14 @@
       <a class="shoe_categpry" href="#img_hero"">Men's</a>
       <a class="shoe_categpry" href="#img_hero">Women's</a>
       <a class="shoe_categpry labels" href="#img_hero">Air Force</a>
-      <a class="shoe_categpry" href="#img_hero"">Nike</a>
+      <a class="shoe_categpry" href="#img_hero">Nike</a>
       <a class="shoe_categpry" href="#img_hero">Yeezy</a>      
     </section>
     <section id="search_shoe_wrapper" class="search_shoe_wrapper">
-      <div id="search_form" class="search_shoe">
+      <div class="search_shoe">
         <form action="">
-          <input type="search" name="search_shoe" id="search_shoe" placeholder="Search..."  maxlength="255">
+          <input type="search" name="search_shoe" id="search_shoe" placeholder="Search Shoes..."  maxlength="255" autocomplete="off">
+          <img src="./icons/search-svgrepo-com.svg" alt="">
         </form>
         <div class="cancel_search_bar">
           <span id="cancel_search"></span>
@@ -91,11 +98,20 @@
     <main>
       <section id="single_shoe_specs">  
         <div class="stars_and_heart">
-          <span id="ratings"></span>
-          <div id="heart_icon"></div>
-          <span id="cancel_shoe"></span>   
+          <div id="ratings">
+            <span ></span>
+          </div>
+          <div id="heart_icon">
+            <span></span>
+          </div>
+          <div id="cancel_shoe">
+            <span></span>
+          </div>
+            
         </div>             
-        <img  src="" alt="" id="single_shoe">
+        <div id="selected_shoe_container">
+          <img  src="" alt="" id="single_shoe">
+        </div>
         <div class="single_shoe_container">
 
           <div class="shoe_head">
@@ -104,180 +120,226 @@
             <p class="shoe_price"></p>
           </div>
 
-          <div class="shoe_size">   
-            <p>Select <b>Size</b></p>    
-            <span>+</span>                           
+          <div  class="shoe_size">   
+            <div class="shoe_size_header" >
+              <p>Select <b>Size</b></p>    
+              <span>+</span>
+            </div>
+            <div id="size_collection">
+              <span data-name="shoe_size" data-size="26" id="size_26">26</span>
+              <span data-name="shoe_size" data-size="27" id="size_27">27</span>
+              <span data-name="shoe_size" data-size="28" id="size_28">28</span>
+              <span data-name="shoe_size" data-size="29" id="size_29">29</span>
+              <span data-name="shoe_size" data-size="30" id="size_30">30</span>
+              <span data-name="shoe_size" data-size="31" id="size_31">31</span>
+              <span data-name="shoe_size" data-size="32" id="size_32">32</span>
+              <span data-name="shoe_size" data-size="33" id="size_33">33</span>
+              <span data-name="shoe_size" data-size="34" id="size_34">34</span>
+              <span data-name="shoe_size" data-size="35" id="size_35">35</span>
+            </div>                         
           </div> 
           <div class="shoeinfo_n_plusicon">
             <p id="shoeinfo_head">Shoe Details</p>
             <p id="shoeinfo_plusicon">+</p>
           </div>
+          <div class="shoe_info_container">
+            <p class="shoe_subtitle"></p>
+            <div class="shoe_composition">
+              <p class="composition_header">Composition</p>
+              <ul>
+                <li>Outer: cotton 90%, Calf Leather 10%</li>
+                <li>Lining: Fabric 60%, Goat Skin 40% </li>
+                <li>Sole: Calf Leather 95%, Rubber 5%</li>
+              </ul>
+            </div>
+            <div class="shoe_benefits">
+              <p class="shoe_benefits_header">Benefits & Features</p>
+              <ul>
+                <li>Water Friendly and Bouyant</li>
+                <li>Breathability and help shred water</li>
+                <li>Light-weight and flexible</li>
+              </ul>
+            </div>
+          </div>
           <div class="shoecolor_n_quantity">
             <div class="shoequantity">
-              <p>Pairs:</p>
-              <input type="number" name="" id="" min="1" max="10" value="1">
+              <p>Pairs: </p>
+              <select name="num_shoe_pairs" id="num_shoe_pairs">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>             
             </div>
             <div class="shoecolor_n_plusicon">
               <p id="shoecolor">Shoe Color</p>
               <p id="plusicon">+</p>
             </div>            
           </div> 
-          <div class="add_to_bag" id="buy"></div>
+          <div class="add_to_bag" id="buy">
+            <span></span>
+          </div>
         </div>
       </section>
       <section class="hero" id="img_hero">
-      <img id="f1" class="shoes female_shoes" src="./img/female/f1.jpg" alt="">
-      <img id="f2" class="shoes female_shoes" src="./img/female/f2.jpg" alt="">
-      <img id="f3" class="shoes female_shoes" src="./img/female/f3.jpg" alt="">
-      <img id="f4" class="shoes female_shoes" src="./img/female/f4.jpg" alt="">
-      <img id="f5" class="shoes female_shoes" src="./img/female/f5.jpg" alt="">
-      <img id="f6" class="shoes female_shoes" src="./img/female/f6.jpg" alt="">
-      <img id="f7" class="shoes female_shoes" src="./img/female/f7.jpg" alt="">
-      <img id="f8" class="shoes female_shoes" src="./img/female/f8.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k1.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k2.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k3.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k5.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k7.jpg" alt="">
+        <img id="f1" class="shoes female_shoes" src="./img/female/f1.jpg" alt="">
+        <img id="f2" class="shoes female_shoes" src="./img/female/f2.jpg" alt="">
+        <img id="f3" class="shoes female_shoes" src="./img/female/f3.jpg" alt="">
+        <img id="f4" class="shoes female_shoes" src="./img/female/f4.jpg" alt="">
+        <img id="f5" class="shoes female_shoes" src="./img/female/f5.jpg" alt="">
+        <img id="f6" class="shoes female_shoes" src="./img/female/f6.jpg" alt="">
+        <img id="f7" class="shoes female_shoes" src="./img/female/f7.jpg" alt="">
+        <img id="f8" class="shoes female_shoes" src="./img/female/f8.jpg" alt="">
+        <img id="k1" class="shoes kids" src="./img/kids/k1.jpg" alt="">
+        <img id="k2" class="shoes kids" src="./img/kids/k2.jpg" alt="">
+        <img id="k3" class="shoes kids" src="./img/kids/k3.jpg" alt="">
+        <img id="k5" class="shoes kids" src="./img/kids/k5.jpg" alt="">
+        <img id="k7" class="shoes kids" src="./img/kids/k7.jpg" alt="">
 
-      <img class="shoes female_shoes" src="./img/female/f9.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f10.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f11.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f14.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f15.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f16.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f17.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f18.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f19.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f12.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f13.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f20.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f21.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f22.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f23.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f24.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f25.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f26.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f27.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f28.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f30.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f31.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f32.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f33.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f34.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f35.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f36.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f37.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f39.jpg" alt="">   
-      <img class="shoes female_shoes" src="./img/female/f42.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f43.jpg" alt="">          
-      <img class="shoes female_shoes" src="./img/female/f45.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f46.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f47.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f48.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f49.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f50.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f40.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f41.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f44.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f29.jpg" alt="">
-      <img class="shoes female_shoes" src="./img/female/f38.jpg" alt="">
+        <img id="f9" class="shoes female_shoes" src="./img/female/f9.jpg" alt="">
+        <img id="f10" class="shoes female_shoes" src="./img/female/f10.jpg" alt="">
+        <img id="f11" class="shoes female_shoes" src="./img/female/f11.jpg" alt="">
+        <img id="f14" class="shoes female_shoes" src="./img/female/f14.jpg" alt="">
+        <img id="f15" class="shoes female_shoes" src="./img/female/f15.jpg" alt="">
+        <img id="f16" class="shoes female_shoes" src="./img/female/f16.jpg" alt="">
+        <img id="f17" class="shoes female_shoes" src="./img/female/f17.jpg" alt="">
+        <img id="f18" class="shoes female_shoes" src="./img/female/f18.jpg" alt="">
+        <img id="f19" class="shoes female_shoes" src="./img/female/f19.jpg" alt="">
+        <img id="f12" class="shoes female_shoes" src="./img/female/f12.jpg" alt="">
+        <img id="f13" class="shoes female_shoes" src="./img/female/f13.jpg" alt="">
+        <img id="f20" class="shoes female_shoes" src="./img/female/f20.jpg" alt="">
+        <img id="f21" class="shoes female_shoes" src="./img/female/f21.jpg" alt="">
+        <img id="f22" class="shoes female_shoes" src="./img/female/f22.jpg" alt="">
+        <img id="f23" class="shoes female_shoes" src="./img/female/f23.jpg" alt="">
+        <img id="f24" class="shoes female_shoes" src="./img/female/f24.jpg" alt="">
+        <img id="f25" class="shoes female_shoes" src="./img/female/f25.jpg" alt="">
+        <img id="f26" class="shoes female_shoes" src="./img/female/f26.jpg" alt="">
+        <img id="f27" class="shoes female_shoes" src="./img/female/f27.jpg" alt="">
+        <img id="f28" class="shoes female_shoes" src="./img/female/f28.jpg" alt="">
+        <img id="f30" class="shoes female_shoes" src="./img/female/f30.jpg" alt="">
+        <img id="f31" class="shoes female_shoes" src="./img/female/f31.jpg" alt="">
+        <img id="f32" class="shoes female_shoes" src="./img/female/f32.jpg" alt="">
+        <img id="f33" class="shoes female_shoes" src="./img/female/f33.jpg" alt="">
+        <img id="f34" class="shoes female_shoes" src="./img/female/f34.jpg" alt="">
+        <img id="f35" class="shoes female_shoes" src="./img/female/f35.jpg" alt="">
+        <img id="f36" class="shoes female_shoes" src="./img/female/f36.jpg" alt="">
+        <img id="f37" class="shoes female_shoes" src="./img/female/f37.jpg" alt="">
+        <img id="f39" class="shoes female_shoes" src="./img/female/f39.jpg" alt="">   
+        <img id="f42" class="shoes female_shoes" src="./img/female/f42.jpg" alt="">
+        <img id="f43" class="shoes female_shoes" src="./img/female/f43.jpg" alt="">          
+        <img id="f45" class="shoes female_shoes" src="./img/female/f45.jpg" alt="">
+        <img id="f46" class="shoes female_shoes" src="./img/female/f46.jpg" alt="">
+        <img id="f47" class="shoes female_shoes" src="./img/female/f47.jpg" alt="">
+        <img id="f48" class="shoes female_shoes" src="./img/female/f48.jpg" alt="">
+        <img id="f49" class="shoes female_shoes" src="./img/female/f49.jpg" alt="">
+        <img id="f50" class="shoes female_shoes" src="./img/female/f50.jpg" alt="">
+        <img id="f40" class="shoes female_shoes" src="./img/female/f40.jpg" alt="">
+        <img id="f41" class="shoes female_shoes" src="./img/female/f41.jpg" alt="">
+        <img id="f44" class="shoes female_shoes" src="./img/female/f44.jpg" alt="">
+        <img id="f29" class="shoes female_shoes" src="./img/female/f29.jpg" alt="">
+        <img id="f38" class="shoes female_shoes" src="./img/female/f38.jpg" alt="">
 
-      <img class="shoes kids" src="./img/kids/k8.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k9.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k10.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k11.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k12.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k13.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k14.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k15.jpg" alt="">   
-      <img class="shoes kids" src="./img/kids/k19.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k20.jpg" alt="">      
-      <img class="shoes kids" src="./img/kids/k22.jpg" alt="">      
-      <img class="shoes kids" src="./img/kids/k24.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k25.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k26.jpg" alt="">   
-      <img class="shoes kids" src="./img/kids/k29.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k30.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k31.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k32.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k33.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k34.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k35.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k36.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k37.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k38.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k39.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k40.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k41.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k42.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k43.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k45.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k46.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k46.jpg" alt="">       
-      <img class="shoes kids" src="./img/kids/k6.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k4.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k17.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k21.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k28.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k16.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k18.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k23.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k27.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k44.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k47.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k48.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k49.jpg" alt="">
-      <img class="shoes kids" src="./img/kids/k50.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k8.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k9.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k10.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k11.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k12.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k13.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k14.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k15.jpg" alt="">   
+        <img class="shoes kids" src="./img/kids/k19.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k20.jpg" alt="">      
+        <img class="shoes kids" src="./img/kids/k22.jpg" alt="">      
+        <img class="shoes kids" src="./img/kids/k24.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k25.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k26.jpg" alt="">   
+        <img class="shoes kids" src="./img/kids/k29.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k30.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k31.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k32.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k33.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k34.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k35.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k36.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k37.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k38.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k39.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k40.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k41.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k42.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k43.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k45.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k46.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k46.jpg" alt="">       
+        <img class="shoes kids" src="./img/kids/k6.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k4.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k17.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k21.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k28.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k16.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k18.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k23.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k27.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k44.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k47.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k48.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k49.jpg" alt="">
+        <img class="shoes kids" src="./img/kids/k50.jpg" alt="">
 
-      <img class="shoes males_shoes" src="./img/male/m20.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m13.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m14.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m15.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m16.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m17.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m18.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m6.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m19.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m21.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m22.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m23.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m24.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m25.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m8.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m26.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m27.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m28.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m29.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m30.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m31.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m32.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m33.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m34.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m35.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m36.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m37.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m38.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m39.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m40.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m41.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m42.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m43.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m44.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m47.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m48.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m49.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m50.jpg" alt="">        
-      <img class="shoes males_shoes" src="./img/male/m1.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m2.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m3.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m4.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m5.jpg" alt="">        
-      <img class="shoes males_shoes" src="./img/male/m7.jpg" alt="">        
-      <img class="shoes males_shoes" src="./img/male/m9.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m11.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m10.jpg" alt="">
-      <img class="shoes males_shoes" src="./img/male/m12.jpg" alt="">         
+        <img class="shoes males_shoes" src="./img/male/m20.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m13.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m14.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m15.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m16.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m17.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m18.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m6.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m19.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m21.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m22.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m23.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m24.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m25.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m8.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m26.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m27.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m28.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m29.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m30.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m31.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m32.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m33.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m34.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m35.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m36.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m37.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m38.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m39.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m40.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m41.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m42.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m43.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m44.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m47.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m48.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m49.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m50.jpg" alt="">        
+        <img class="shoes males_shoes" src="./img/male/m1.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m2.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m3.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m4.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m5.jpg" alt="">        
+        <img class="shoes males_shoes" src="./img/male/m7.jpg" alt="">        
+        <img class="shoes males_shoes" src="./img/male/m9.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m11.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m10.jpg" alt="">
+        <img class="shoes males_shoes" src="./img/male/m12.jpg" alt="">         
       </section>      
     </main>    
     <footer>
@@ -296,6 +358,9 @@
         </ul>
       </div>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="./js/jquery-3.6.0.js"></script> -->
     <script src="./js/script.js"></script>
   </body>
 </html>

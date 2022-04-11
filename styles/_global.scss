@@ -1,168 +1,209 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  html {
-    font-size: 62.5%;   
-    scroll-behavior: smooth;
-  }
-  .icons{
-    width: $icon_size;
-    height:$icon_size;
-    object-fit: cover;
-    cursor: pointer;  
-  }
-
-  body {
-    font-family: 'Montserrat', sans-serif; 
-    margin: 0;
-    padding: 0;
-    animation: opening 2s ease-in-out;
-    color: $text_color;
-  }
-  h1 {
-    font-size: $header1;
-  }
-  li,
-  button,
-  label,
-  input,
-  p {
-    font-size: $text;
-  }
-  h2 {
-    font-size:  $header2;
-  }
-  h3 {
-    font-size:  $header3;
-  }
-  h4,
-  h5 {
-    font-size: $header4;
-  }
-a {
-    color: $text_color;
-    text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+.icons {
+  width: $icon_size;
+  height: $icon_size;
+  object-fit: cover;
+  cursor: pointer;
 }
 
-  /* ---------------------------NAV SECTION -------------------------------------------------------*/
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  animation: opening 2s ease-in-out;
+  color: $text_color;
+}
+h1 {
+  font-size: $header1;
+}
+li,
+button,
+label,
+input,
+p,
+span {
+  font-size: $text;
+}
+h2 {
+  font-size: $header2;
+}
+h3 {
+  font-size: $header3;
+}
+h4,
+h5 {
+  font-size: $header4;
+}
+a {
+  color: $text_color;
+  text-decoration: none;
+}
+
+/* ---------------------------NAV SECTION -------------------------------------------------------*/
 
 .main-head {
-    background: white;
-    color: $text_color;
-    box-shadow: 0px 5px 5px rgba(19, 28, 39, 0.1),  0px 10px 10px  rgba(19, 28, 39, 0.1);
-    position: sticky;
-    top: 0%;
-    z-index: 1;
+  background: white;
+  color: $text_color;
+  box-shadow: 0px 5px 5px rgba(19, 28, 39, 0.1),
+    0px 10px 10px rgba(19, 28, 39, 0.1);
+  position: sticky;
+  top: 0%;
+  z-index: 1;
 }
 nav {
-    @include flex(center, row, center);
-    min-height: 7vh;
-    width: 90%;
-    margin: auto;
-    padding: 1rem;
-    flex-wrap: nowrap;
-    h1{
-      flex: 3 1 40rem;
-      font-weight: 400;  
-      font-family: "Pattaya", sans-serif;
-      letter-spacing: 0.2rem;
-      text-align: center;
-    }
+  @include flex(center, row, center);
+  min-height: 10vh;
+  width: 90%;
+  margin: auto;
+  padding: 1rem;
+  flex-wrap: nowrap;
+  h1 {
+    flex: 3 1 40rem;
+    font-weight: 400;
+    font-family: "Pattaya", sans-serif;
+    letter-spacing: 0.2rem;
+    text-align: center;
+  }
 }
-.search_and_bag_icons{
+.search_and_bag_icons {
   @include flex(space-between, row, center);
-  #shopping_bag{
+  #shopping_bag {
     margin-left: calc(1.5rem + 0.5vw);
   }
-}
-.active{
-    background:#525252 ;
-    border-radius: 2rem;
-    color:white;
-    padding: 0.5rem 0.5rem;
+  .bag_n_items {
+    position: relative;
+    cursor: pointer;
+    p {
+      position: absolute;
+      top: 64%;
+      left: 67%;
+      font-weight: bold;
+      transform: translate(-50%, -50%);
+      font-size: 1.6rem;
+      color: white;
+    }
+    i {
+      font-size: 2.5rem;
+      color: $text_color;
+    }
   }
-.gender, .labels{
-border-top: 1px solid $cancel_color;
+}
+.active {
+  background: #525252;
+  border-radius: 2rem;
+  color: white;
+  padding: 0.5rem 0.5rem;
+}
+.gender,
+.labels {
+  border-top: 1px solid $cancel_color;
 }
 
 // ----------------------------HERO SECTION-----------------------------------------------
-.hero{
-    min-height: 93vh;
-    width: 98%;
-    margin: 1.5rem auto;
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+.hero {
+  min-height: 93vh;
+  width: 98%;
+  margin: 1.5rem auto;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
 
-    img{
-        height: 100%;
-        width: 100%;
-        border-radius: 0.5rem;    
-        object-fit: cover;
-      }
+  img {
+    height: 100%;
+    width: 100%;
+    border-radius: 0.5rem;
+    object-fit: cover;
+    transition: border 0.5s;
   }
 
+  .clicked_shoe {
+    border: 1rem solid $text_color;
+  }
+}
+
 // --------------------SELECTED SHOE SECTION ---------------------------------------
-.shoe_details{
-   img{
-    animation:selected_shoe 1s ease-in-out forwards;
+.shoe_details {
+  img {
+    animation: selected_shoe 1s ease-in-out forwards;
     transform-box: fill-box;
-   }
+  }
 }
-.shoe_size{
-    span{
-        font-weight: bold;
-        font-size:$header1
-    }
-    h5{
-        font-size: $text;
-    }
-}
+// .shoe_size_header {
+//   // span {
+//   //   font-size: 4rem;
+//   //   font-weight: 100;
+//   //   cursor: pointer;
+//   //   transition: all 1s;
+//   // }
+//   // h5 {
+//   //   font-size: $text;
+//   // }
+// }
 
 /* ------------------------------FOOTER SECTION----------------------------- */
 footer {
-    background: $bg_color;
-    font-family: 'League Spartan', sans-serif; 
-    background:linear-gradient(rgba(19, 28, 39, 0.2), transparent);
-    text-align: center;
+  background: $bg_color;
+  font-family: "League Spartan", sans-serif;
+  background: linear-gradient(rgba(19, 28, 39, 0.2), transparent);
+  text-align: center;
 }
 .footer-wrapper {
-    @include flex(center, row, center);
-    padding: 2rem;
-    width: 90%;
-    margin: auto;
-    min-height: 10vh;
-    flex-wrap: wrap;
-    h3 {
-        flex: 1 1 40rem;
-    }
-    ul {
-        @include flex(space-between, row, center);
-        list-style: none;
-        flex: 1 1 40rem;
-      }
+  @include flex(center, row, center);
+  padding: 2rem;
+  width: 90%;
+  margin: auto;
+  min-height: 10vh;
+  flex-wrap: wrap;
+  h3 {
+    flex: 1 1 40rem;
   }
+  ul {
+    @include flex(space-between, row, center);
+    list-style: none;
+    flex: 1 1 40rem;
+  }
+}
 
 /* ------------------------------MEDIA QUERIES SECTION----------------------------- */
 
 @keyframes opening {
-    from{
-      opacity: 0;
-    }
-    to{
-      opacity: 1;
-    }
-    
+  from {
+    opacity: 0;
   }
-
-@keyframes selected_shoe {
-    from{
-        transform: translateY(10%) rotateZ(-10deg) rotateX(-90deg);
-    }
-    to{
-        transform: translateY(0%) rotateZ(0deg)  rotateX(-0deg);
-    }  
+  to {
+    opacity: 1;
+  }
+}
+@keyframes move_to_right {
+  0% {
+    transform: translateX(-5rem);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  80% {
+    transform: translateX(2rem);
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
 }
 
+@keyframes selected_shoe {
+  from {
+    transform: translateY(10%) rotateZ(-10deg) rotateX(-90deg);
+  }
+  to {
+    transform: translateY(0%) rotateZ(0deg) rotateX(-0deg);
+  }
+}

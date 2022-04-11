@@ -21,7 +21,7 @@ html {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
   -webkit-animation: opening 2s ease-in-out;
@@ -37,7 +37,8 @@ li,
 button,
 label,
 input,
-p {
+p,
+span {
   font-size: 2rem;
 }
 
@@ -85,7 +86,7 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 7vh;
+  min-height: 10vh;
   width: 90%;
   margin: auto;
   padding: 1rem;
@@ -123,6 +124,27 @@ nav h1 {
   margin-left: calc(1.5rem + 0.5vw);
 }
 
+.search_and_bag_icons .bag_n_items {
+  position: relative;
+  cursor: pointer;
+}
+
+.search_and_bag_icons .bag_n_items p {
+  position: absolute;
+  top: 64%;
+  left: 67%;
+  font-weight: bold;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 1.6rem;
+  color: white;
+}
+
+.search_and_bag_icons .bag_n_items i {
+  font-size: 2.5rem;
+  color: #131c27;
+}
+
 .active {
   background: #525252;
   border-radius: 2rem;
@@ -130,7 +152,8 @@ nav h1 {
   padding: 0.5rem 0.5rem;
 }
 
-.gender, .labels {
+.gender,
+.labels {
   border-top: 1px solid #131c2782;
 }
 
@@ -151,6 +174,12 @@ nav h1 {
   border-radius: 0.5rem;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-transition: border 0.5s;
+  transition: border 0.5s;
+}
+
+.hero .clicked_shoe {
+  border: 1rem solid #131c27;
 }
 
 .shoe_details img {
@@ -159,19 +188,10 @@ nav h1 {
   transform-box: fill-box;
 }
 
-.shoe_size span {
-  font-weight: bold;
-  font-size: 2.5rem;
-}
-
-.shoe_size h5 {
-  font-size: 2rem;
-}
-
 /* ------------------------------FOOTER SECTION----------------------------- */
 footer {
   background: white;
-  font-family: 'League Spartan', sans-serif;
+  font-family: "League Spartan", sans-serif;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(19, 28, 39, 0.2)), to(transparent));
   background: linear-gradient(rgba(19, 28, 39, 0.2), transparent);
   text-align: center;
@@ -243,6 +263,46 @@ footer {
   }
 }
 
+@-webkit-keyframes move_to_right {
+  0% {
+    -webkit-transform: translateX(-5rem);
+            transform: translateX(-5rem);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  80% {
+    -webkit-transform: translateX(2rem);
+            transform: translateX(2rem);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes move_to_right {
+  0% {
+    -webkit-transform: translateX(-5rem);
+            transform: translateX(-5rem);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  80% {
+    -webkit-transform: translateX(2rem);
+            transform: translateX(2rem);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+    opacity: 1;
+  }
+}
+
 @-webkit-keyframes selected_shoe {
   from {
     -webkit-transform: translateY(10%) rotateZ(-10deg) rotateX(-90deg);
@@ -288,6 +348,10 @@ footer {
     -ms-grid-columns: (minmax(5rem, 1fr))[auto-fit];
         grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
   }
+  .moving_images {
+    -webkit-animation: moving_imgs 1s linear alternate;
+            animation: moving_imgs 1s linear alternate;
+  }
   .shoe_details {
     display: -ms-grid;
     display: grid;
@@ -314,13 +378,17 @@ footer {
     margin: 1rem auto;
     width: 80%;
     font-size: 3rem;
-    cursor: pointer;
     min-height: 5vh;
   }
-  .shoe_details .stars_and_heart #heart_icon, .shoe_details .stars_and_heart #ratings {
+  .shoe_details .stars_and_heart #heart_icon,
+  .shoe_details .stars_and_heart #ratings {
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
+  }
+  .shoe_details .stars_and_heart #heart_icon span,
+  .shoe_details .stars_and_heart #ratings span {
+    cursor: pointer;
   }
   .shoe_details .stars_and_heart #cancel_shoe {
     -webkit-box-flex: 2;
@@ -329,17 +397,37 @@ footer {
     text-align: end;
     color: #131c2782;
   }
-  .shoe_details img {
-    height: 100%;
-    width: 80%;
+  .shoe_details .stars_and_heart #cancel_shoe span {
+    cursor: pointer;
+  }
+  .shoe_details .selected_shoe_container {
+    min-height: 20vh;
+    width: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0 auto;
+  }
+  .shoe_details .selected_shoe_container img {
+    height: auto;
     border-radius: 0.5rem;
     -o-object-fit: cover;
        object-fit: cover;
-    margin: auto;
+    width: 80%;
   }
   .shoe_details .single_shoe_container {
     margin: 1rem 0;
-    font-family: 'League Spartan', sans-serif;
+    font-family: "League Spartan", sans-serif;
   }
   .shoe_details .single_shoe_container .shoe_head {
     padding: 0rem;
@@ -350,7 +438,7 @@ footer {
   .shoe_details .single_shoe_container .shoe_head .shoe_title {
     font-weight: bold;
   }
-  .shoe_details .single_shoe_container .shoe_size {
+  .shoe_details .single_shoe_container .shoe_size .shoe_size_header {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -369,14 +457,37 @@ footer {
     border-bottom: 1px solid #525252;
     padding: 0 1rem;
   }
-  .shoe_details .single_shoe_container .shoe_size p {
+  .shoe_details .single_shoe_container .shoe_size .shoe_size_header p {
     -webkit-box-flex: 4;
         -ms-flex: 4 1 60rem;
             flex: 4 1 60rem;
   }
-  .shoe_details .single_shoe_container .shoe_size span {
+  .shoe_details .single_shoe_container .shoe_size .shoe_size_header span {
     font-size: 4rem;
-    font-weight: 100;
+    cursor: pointer;
+    display: inline-block;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+  .shoe_details .single_shoe_container .shoe_size .shoe_size_header .toggle_shoe_size_collection {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    color: #131c2782;
+  }
+  .shoe_details .single_shoe_container .shoe_size #size_collection {
+    width: 90%;
+    display: -ms-grid;
+    display: grid;
+    margin: 0 auto;
+    -ms-grid-columns: (minmax(7rem, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+  }
+  .shoe_details .single_shoe_container .shoe_size #size_collection span {
+    border: 1px solid #131c27;
+    text-align: center;
+    margin: 1rem;
+    border-radius: 50%;
+    padding: 1rem;
   }
   .shoe_details .single_shoe_container .shoeinfo_n_plusicon {
     display: -webkit-box;
@@ -405,6 +516,38 @@ footer {
   .shoe_details .single_shoe_container .shoeinfo_n_plusicon #shoeinfo_plusicon {
     font-size: 4rem;
     font-weight: 100;
+    cursor: pointer;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+  .shoe_details .single_shoe_container .shoeinfo_n_plusicon .toggle_shoe_details {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    color: #131c2782;
+  }
+  .shoe_details .single_shoe_container .shoe_info_container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .shoe_details .single_shoe_container .shoe_info_container .shoe_subtitle {
+    margin-top: 2rem;
+    font-weight: bold;
+  }
+  .shoe_details .single_shoe_container .shoe_info_container .shoe_composition p {
+    margin-top: 2rem;
+    text-decoration: underline;
+  }
+  .shoe_details .single_shoe_container .shoe_info_container .shoe_composition ul li {
+    margin: 0 auto 0 10%;
+    font-weight: 1.5rem;
+  }
+  .shoe_details .single_shoe_container .shoe_info_container .shoe_benefits p {
+    margin-top: 2rem;
+    text-decoration: underline;
+  }
+  .shoe_details .single_shoe_container .shoe_info_container .shoe_benefits ul li {
+    margin: 0 auto 0 10%;
+    font-weight: 1.5rem;
   }
   .shoe_details .single_shoe_container .shoecolor_n_quantity {
     display: -webkit-box;
@@ -440,8 +583,8 @@ footer {
         -ms-flex-align: center;
             align-items: center;
     -webkit-box-flex: 2;
-        -ms-flex: 2 1 30rem;
-            flex: 2 1 30rem;
+        -ms-flex: 2 1 20rem;
+            flex: 2 1 20rem;
     margin: 0 1rem;
   }
   .shoe_details .single_shoe_container .shoecolor_n_quantity .shoecolor_n_plusicon #plusicon {
@@ -469,42 +612,52 @@ footer {
         -ms-flex: 1 1 5rem;
             flex: 1 1 5rem;
     text-align: center;
-    margin-right: .5rem;
+    margin-right: 0.5rem;
   }
-  .shoe_details .single_shoe_container .shoecolor_n_quantity .shoequantity input {
+  .shoe_details .single_shoe_container .shoecolor_n_quantity .shoequantity select {
     -webkit-box-flex: 2;
         -ms-flex: 2 1 20rem;
             flex: 2 1 20rem;
     text-align: left;
-    width: 50%;
-    padding: 0 1rem;
+    width: 70%;
+    padding: 0.5rem 1rem;
     font-weight: 100;
     font-size: 2rem;
+    outline: none;
+    border: 1px solid #131c2782;
+    border-radius: 0.5rem;
+    color: #131c27;
+    -webkit-transition: all 2s;
+    transition: all 2s;
   }
-  .shoe_details .single_shoe_container .add_to_bag {
+  .shoe_details .single_shoe_container .shoecolor_n_quantity .shoequantity select:focus {
+    border: 1px solid #131c27;
+  }
+  .shoe_details .single_shoe_container .add_to_bag,
+  .shoe_details .single_shoe_container .add_to_bag_inactive {
     padding: 2rem;
     cursor: pointer;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     text-align: center;
     color: rgba(255, 255, 255, 0.878);
     background-color: #131c27;
     letter-spacing: 2px;
     width: 90%;
-    margin: 2rem auto;
+    margin: 3rem auto;
     font-weight: bolder;
+    -webkit-transition: all 1s;
+    transition: all 1s;
   }
   .shoe_details .single_shoe_container .add_to_bag_inactive {
     -webkit-box-flex: 2;
         -ms-flex: 2 1 40%;
             flex: 2 1 40%;
-    padding: 1rem;
     cursor: not-allowed;
-    border-radius: 1rem;
-    margin: 2rem auto;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.878);
     background-color: rgba(255, 0, 0, 0.207);
-    width: 90%;
+  }
+  .singleShoeBlur {
+    -webkit-filter: blur(0.5rem);
+            filter: blur(0.5rem);
   }
   .image_slider {
     display: -webkit-box;
@@ -523,38 +676,58 @@ footer {
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
-    margin: 1rem 0;
+    margin: 0 0 1rem 0;
     min-height: 5vh;
   }
   .image_slider img {
-    height: 10vh;
-    width: 20%;
+    height: 5vh;
+    width: 10%;
   }
   .shop_bag_alert {
     z-index: 2;
-    font-family: 'League Spartan', sans-serif;
+    font-family: "League Spartan", sans-serif;
     top: 0%;
     left: 100%;
     background-color: white;
     border-end-end-radius: 5px;
-    width: 80%;
+    width: 90%;
     height: 100vh;
     position: fixed;
     -webkit-box-shadow: -10px 10px 10px rgba(19, 28, 39, 0.1), -20px 20px 20px rgba(19, 28, 39, 0.1);
             box-shadow: -10px 10px 10px rgba(19, 28, 39, 0.1), -20px 20px 20px rgba(19, 28, 39, 0.1);
     border-top: none;
   }
-  .shop_bag_alert .checkout {
+  .shop_bag_alert .checkout,
+  .shop_bag_alert .clear_shopping {
     padding: 2rem;
     cursor: pointer;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     text-align: center;
     color: rgba(255, 255, 255, 0.878);
     background-color: #131c27;
     letter-spacing: 2px;
     width: 90%;
     margin: 5rem auto 1rem auto;
-    font-weight: bolder;
+    font-weight: bold;
+  }
+  .shop_bag_alert .clear_shopping {
+    background-color: #c41a1a;
+    margin: 2rem auto 1rem auto;
+  }
+  .shop_bag_alert .anim_checkout {
+    -webkit-animation: move_checkout_top 0.5s ease-out 0.5s backwards;
+            animation: move_checkout_top 0.5s ease-out 0.5s backwards;
+  }
+  .shop_bag_alert .checkout_clicked {
+    -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+    -webkit-transform: translateY(-0.8rem) scale(1.2, 1.3);
+            transform: translateY(-0.8rem) scale(1.2, 1.3);
+    background: #fff;
+    color: #131c27;
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
   }
   .shop_bag_alert .cost_head {
     width: 90%;
@@ -613,6 +786,8 @@ footer {
             align-items: center;
     font-weight: bold;
     margin: 3rem auto;
+    border-top: 1px solid #525252;
+    padding: 1rem 0;
   }
   .bag_items_and_cancel_alert {
     display: -webkit-box;
@@ -639,6 +814,10 @@ footer {
   .bag_items_and_cancel_alert .bag_items {
     font-weight: bold;
   }
+  .bag_items_and_cancel_alert .moving_bag_items {
+    -webkit-animation: moving_bag_items 1.5s linear alternate;
+            animation: moving_bag_items 1.5s linear alternate;
+  }
   .shop_bag_notification_content {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -655,7 +834,11 @@ footer {
             align-items: center;
     margin: 7rem auto;
     width: 90%;
+  }
+  .moving_hero {
     border-bottom: 1px solid #525252;
+    -webkit-animation: move_to_right 1.5s linear alternate;
+            animation: move_to_right 1.5s linear alternate;
   }
   .search_shoe_wrapper {
     position: -webkit-sticky;
@@ -663,8 +846,8 @@ footer {
     top: 0%;
     z-index: 1;
     display: none;
-    -webkit-animation: search_bar_show 1s linear forwards;
-            animation: search_bar_show 1s linear forwards;
+    -webkit-animation: search_bar_show 1s linear 0.5s forwards;
+            animation: search_bar_show 1s linear 0.5s forwards;
     transform-box: fill-box;
   }
   .search_shoe_wrapper .search_shoe {
@@ -690,13 +873,14 @@ footer {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    -webkit-animation: changeBackground 8s infinite alternate ease-in-out 2s;
-            animation: changeBackground 8s infinite alternate ease-in-out 2s;
+    -webkit-animation: changeBackground 8s ease-out infinite 0.5 alternate;
+            animation: changeBackground 8s ease-out infinite 0.5 alternate;
   }
   .search_shoe_wrapper .search_shoe form {
     -webkit-box-flex: 3;
         -ms-flex-positive: 3;
             flex-grow: 3;
+    position: relative;
   }
   .search_shoe_wrapper .search_shoe form input {
     width: 0%;
@@ -704,22 +888,28 @@ footer {
     border-radius: 8rem;
     border: none;
     outline: none;
-    padding: 1rem 4rem;
-    background-color: rgba(238, 238, 238, 0.248);
-    -webkit-box-shadow: 0.1em 0.1em 0.25em #131c2754, -0.1em -0.1em 0.25em  #131c2754;
-            box-shadow: 0.1em 0.1em 0.25em #131c2754, -0.1em -0.1em 0.25em  #131c2754;
-    font-size: medium;
+    padding: 1rem 2rem 1rem 5rem;
+    -webkit-box-shadow: 0.1em 0.1em 0.25em #131c2754, -0.1em -0.1em 0.25em #131c2754;
+            box-shadow: 0.1em 0.1em 0.25em #131c2754, -0.1em -0.1em 0.25em #131c2754;
+    font-weight: bold;
+  }
+  .search_shoe_wrapper .search_shoe form img {
+    height: 2.6rem;
+    width: 2.6rem;
+    position: absolute;
+    left: 3%;
+    top: 25%;
+    color: #131c2782;
   }
   .search_shoe_wrapper .search_shoe .cancel_search_bar {
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
     color: white;
-    font-size: 3rem;
+    font-size: 2rem;
     cursor: pointer;
     text-align: center;
     padding-top: 0.25rem;
-    font-weight: 100;
   }
   /* -------------------------------SLIDING MENU SECTION------------------------------- */
   .dropdown_content {
@@ -735,11 +925,12 @@ footer {
   }
   .dropdown_content a {
     display: block;
-    padding: 3rem 3rem;
+    padding: 2rem 3rem;
     font-size: 2rem;
     font-weight: bold;
   }
-  .dropdown_content a .gender, .dropdown_content a .labels {
+  .dropdown_content a .gender,
+  .dropdown_content a .labels {
     border-top: 1px solid #131c2782;
   }
   .dropdown_content #cancel_dropdown {
@@ -777,6 +968,102 @@ footer {
     to {
       -webkit-transform: translateY(0%) rotateX(0deg);
               transform: translateY(0%) rotateX(0deg);
+    }
+  }
+  @-webkit-keyframes moving_imgs {
+    0% {
+      -webkit-transform: translateX(-10rem);
+              transform: translateX(-10rem);
+    }
+    10% {
+      opacity: 0.8;
+    }
+    80% {
+      -webkit-transform: translateX(2rem);
+              transform: translateX(2rem);
+    }
+    100% {
+      -webkit-transform: translate(0);
+              transform: translate(0);
+      opacity: 1;
+    }
+  }
+  @keyframes moving_imgs {
+    0% {
+      -webkit-transform: translateX(-10rem);
+              transform: translateX(-10rem);
+    }
+    10% {
+      opacity: 0.8;
+    }
+    80% {
+      -webkit-transform: translateX(2rem);
+              transform: translateX(2rem);
+    }
+    100% {
+      -webkit-transform: translate(0);
+              transform: translate(0);
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes move_checkout_top {
+    0% {
+      -webkit-transform: translateY(6rem);
+              transform: translateY(6rem);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translate(0);
+              transform: translate(0);
+      opacity: 1;
+    }
+  }
+  @keyframes move_checkout_top {
+    0% {
+      -webkit-transform: translateY(6rem);
+              transform: translateY(6rem);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translate(0);
+              transform: translate(0);
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes moving_bag_items {
+    0% {
+      -webkit-transform: translateX(10rem);
+              transform: translateX(10rem);
+    }
+    10% {
+      opacity: 0.8;
+    }
+    80% {
+      -webkit-transform: translateX(-2rem);
+              transform: translateX(-2rem);
+    }
+    100% {
+      -webkit-transform: translate(0);
+              transform: translate(0);
+      opacity: 1;
+    }
+  }
+  @keyframes moving_bag_items {
+    0% {
+      -webkit-transform: translateX(10rem);
+              transform: translateX(10rem);
+    }
+    10% {
+      opacity: 0.8;
+    }
+    80% {
+      -webkit-transform: translateX(-2rem);
+              transform: translateX(-2rem);
+    }
+    100% {
+      -webkit-transform: translate(0);
+              transform: translate(0);
+      opacity: 1;
     }
   }
   @-webkit-keyframes changeBackground {

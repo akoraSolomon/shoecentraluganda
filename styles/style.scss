@@ -1,23 +1,24 @@
-$header1:2.5rem;
+$header1: 2.5rem;
 $header2: 2rem;
 $header3: 1.5rem;
 $header4: 1rem;
 $text: 2rem;
 $big_text: 2.4rem;
-$cancel_color:#131c2782;
-$special_color:#525252;
-$text_color:#131c27;
-$icon_size:2.6rem;  /* padding left and right */
-$bg_color:white;
+$cancel_color: #131c2782;
+$special_color: #525252;
+$text_color: #131c27;
+$icon_size: 2.6rem; /* padding left and right */
+$bg_color: white;
+$inactive_color: rgba(255, 0, 0, 0.207);
+$bgcolor_clicked: #fff;
 
 @mixin flex($justify, $direction, $align) {
-    display: flex;
-    justify-content: $justify;
-    flex-direction: $direction;
-    align-items: $align;
+  display: flex;
+  justify-content: $justify;
+  flex-direction: $direction;
+  align-items: $align;
 }
 
 @import "global";
 @import "tablet";
 @import "mobile";
-
